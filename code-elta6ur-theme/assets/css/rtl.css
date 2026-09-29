@@ -1,0 +1,29 @@
+/* ==========================================================================
+   كود التطور - أنماط الاتجاه العربي المكملة (RTL Enhancements)
+   Code Elta6ur - RTL Specific Enhancements
+   ========================================================================== */
+
+body {
+  direction: rtl;
+  unicode-bidi: embed;
+}
+
+/* Ensure code blocks stay LTR */
+pre, code, kbd, samp, .cdt-font-code {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: bidi-override;
+}
+
+/* Number inputs and phone fields */
+input[type="tel"],
+input[type="number"],
+.cdt-stat-number {
+  direction: ltr;
+  text-align: right;
+}
+
+/* Flip arrows in RTL where needed */
+.cdt-arrow-icon {
+  transform: scaleX(-1);
+}

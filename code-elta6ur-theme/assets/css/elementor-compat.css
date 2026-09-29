@@ -1,0 +1,30 @@
+/* ==========================================================================
+   كود التطور - طبقة التوافق والعزل لصفحات Elementor
+   Code Elta6ur - Elementor Graceful Coexistence & Compatibility Layer
+   ========================================================================== */
+
+/* Isolation wrapper for Elementor content */
+.cdt-has-elementor .cdt-main-content {
+  padding-block: 0;
+}
+
+.cdt-elementor-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+/* Ensure Elementor full-width sections are not constrained by theme container */
+.cdt-has-elementor .elementor-section.elementor-section-boxed > .elementor-container {
+  max-width: var(--container-max, 1240px);
+}
+
+/* Prevent Elementor typography override on theme header and footer */
+.cdt-site-header,
+.cdt-site-footer {
+  font-family: var(--font-base, 'Cairo', system-ui, sans-serif) !important;
+}
+
+.cdt-site-header a,
+.cdt-site-footer a {
+  font-family: inherit !important;
+}
