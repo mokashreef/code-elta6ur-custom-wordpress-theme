@@ -1,6 +1,6 @@
 <?php
 /**
- * Test script to verify ZIP structure and ensure zero backslashes
+ * Test script to verify ZIP structure for both direct upload and cPanel
  */
 $zipPath = __DIR__ . '/../code-elta6ur-theme.zip';
 if (!file_exists($zipPath)) {
@@ -22,23 +22,23 @@ for ($i = 0; $i < $zip->numFiles; $i++) {
         $backslashes++;
         echo "Found backslash in entry: $name\n";
     }
-    if ($name === 'code-elta6ur-theme/style.css') {
+    if ($name === 'style.css') {
         $styleCssFound = true;
     }
-    if ($name === 'code-elta6ur-theme/functions.php') {
+    if ($name === 'functions.php') {
         $functionsPhpFound = true;
     }
 }
 
 echo "Total entries: " . $zip->numFiles . "\n";
 echo "Backslashes count: " . $backslashes . "\n";
-echo "code-elta6ur-theme/style.css present: " . ($styleCssFound ? "YES" : "NO") . "\n";
-echo "code-elta6ur-theme/functions.php present: " . ($functionsPhpFound ? "YES" : "NO") . "\n";
+echo "style.css present at root: " . ($styleCssFound ? "YES" : "NO") . "\n";
+echo "functions.php present at root: " . ($functionsPhpFound ? "YES" : "NO") . "\n";
 
 $zip->close();
 
 if ($backslashes === 0 && $styleCssFound && $functionsPhpFound) {
-    echo "SUCCESS: Archive is 100% compliant with WordPress and Linux standards!\n";
+    echo "SUCCESS: Archive is 100% compliant with WordPress Admin Direct Upload standards!\n";
     exit(0);
 } else {
     echo "FAILURE: Non-compliant archive structure!\n";

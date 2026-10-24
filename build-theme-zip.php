@@ -4,9 +4,10 @@
  * Code Elta6ur Standards-Compliant Theme ZIP Packager
  */
 
-$sourceDir = __DIR__ . '/code-elta6ur-theme';
-$zipStandard = __DIR__ . '/code-elta6ur-theme.zip';
+$sourceDir   = __DIR__ . '/code-elta6ur-theme';
+$zipWPAdmin  = __DIR__ . '/code-elta6ur-theme.zip';
 $zipRoot     = __DIR__ . '/code-elta6ur-theme-root.zip';
+$zipCpanel   = __DIR__ . '/code-elta6ur-theme-cpanel.zip';
 
 if ( ! is_dir( $sourceDir ) ) {
 	die( "Error: Source directory $sourceDir not found!\n" );
@@ -14,29 +15,32 @@ if ( ! is_dir( $sourceDir ) ) {
 
 $sourceDirReal = realpath( $sourceDir );
 
-// 1. Build Standard Theme ZIP (with code-elta6ur-theme/ directory and style.css at the top)
-if ( file_exists( $zipStandard ) ) {
-	unlink( $zipStandard );
+// Priority files to guarantee style.css is read first
+$priorityFiles = array( 'style.css', 'functions.php', 'index.php', 'screenshot.png', 'README.md' );
+
+/**
+ * 1. Build WP-Admin Direct Install ZIP (code-elta6ur-theme.zip)
+ * Files are at the root level so WordPress upgrader immediately locates style.css
+ * and installs it to wp-content/themes/code-elta6ur-theme/ without double-directory bugs.
+ */
+if ( file_exists( $zipWPAdmin ) ) {
+	unlink( $zipWPAdmin );
 }
 
 $zip = new ZipArchive();
-if ( $zip->open( $zipStandard, ZipArchive::CREATE | ZipArchive::OVERWRITE ) !== true ) {
-	die( "Error: Cannot create zip archive $zipStandard\n" );
+if ( $zip->open( $zipWPAdmin, ZipArchive::CREATE | ZipArchive::OVERWRITE ) !== true ) {
+	die( "Error: Cannot create zip archive $zipWPAdmin\n" );
 }
 
-// Explicit root directory entry
-$zip->addEmptyDir( 'code-elta6ur-theme' );
-
-// Priority files added FIRST so WordPress upgrader immediately locates stylesheet
-$priorityFiles = array( 'style.css', 'functions.php', 'index.php', 'screenshot.png', 'README.md' );
+// Add priority files first
 foreach ( $priorityFiles as $pf ) {
 	$pfReal = $sourceDirReal . DIRECTORY_SEPARATOR . $pf;
 	if ( file_exists( $pfReal ) ) {
-		$zip->addFile( $pfReal, 'code-elta6ur-theme/' . $pf );
+		$zip->addFile( $pfReal, $pf );
 	}
 }
 
-// Collect all directories and remaining files
+// Add all remaining files and directories
 $dirIterator = new RecursiveIteratorIterator(
 	new RecursiveDirectoryIterator( $sourceDirReal, RecursiveDirectoryIterator::SKIP_DOTS ),
 	RecursiveIteratorIterator::SELF_FIRST
@@ -47,36 +51,39 @@ foreach ( $dirIterator as $item ) {
 	$relativePath = substr( $realPath, strlen( $sourceDirReal ) + 1 );
 	$standardPath = str_replace( '\\', '/', $relativePath );
 
-	// Skip priority files already added
 	if ( in_array( $standardPath, $priorityFiles, true ) ) {
 		continue;
 	}
 
 	if ( $item->isDir() ) {
-		$zip->addEmptyDir( 'code-elta6ur-theme/' . $standardPath );
+		$zip->addEmptyDir( $standardPath );
 	} elseif ( $item->isFile() ) {
-		$zip->addFile( $realPath, 'code-elta6ur-theme/' . $standardPath );
+		$zip->addFile( $realPath, $standardPath );
 	}
 }
 
 $zip->close();
-echo "Successfully built standard: {$zipStandard}\n";
+echo "Successfully built direct WordPress upload ZIP: {$zipWPAdmin}\n";
 
-// 2. Build Root-Level Theme ZIP (files directly in root of archive, guaranteed for direct extract)
-if ( file_exists( $zipRoot ) ) {
-	unlink( $zipRoot );
+// 2. Also keep code-elta6ur-theme-root.zip as identical backup
+copy( $zipWPAdmin, $zipRoot );
+echo "Successfully updated: {$zipRoot}\n";
+
+// 3. Build cPanel / File Manager ZIP with folder wrapper (code-elta6ur-theme/...)
+if ( file_exists( $zipCpanel ) ) {
+	unlink( $zipCpanel );
 }
 
-$zip2 = new ZipArchive();
-if ( $zip2->open( $zipRoot, ZipArchive::CREATE | ZipArchive::OVERWRITE ) !== true ) {
-	die( "Error: Cannot create zip archive $zipRoot\n" );
+$zip3 = new ZipArchive();
+if ( $zip3->open( $zipCpanel, ZipArchive::CREATE | ZipArchive::OVERWRITE ) !== true ) {
+	die( "Error: Cannot create zip archive $zipCpanel\n" );
 }
 
-// Priority files added first in root archive
+$zip3->addEmptyDir( 'code-elta6ur-theme' );
 foreach ( $priorityFiles as $pf ) {
 	$pfReal = $sourceDirReal . DIRECTORY_SEPARATOR . $pf;
 	if ( file_exists( $pfReal ) ) {
-		$zip2->addFile( $pfReal, $pf );
+		$zip3->addFile( $pfReal, 'code-elta6ur-theme/' . $pf );
 	}
 }
 
@@ -90,23 +97,23 @@ foreach ( $dirIterator as $item ) {
 	}
 
 	if ( $item->isDir() ) {
-		$zip2->addEmptyDir( $standardPath );
+		$zip3->addEmptyDir( 'code-elta6ur-theme/' . $standardPath );
 	} elseif ( $item->isFile() ) {
-		$zip2->addFile( $realPath, $standardPath );
+		$zip3->addFile( $realPath, 'code-elta6ur-theme/' . $standardPath );
 	}
 }
 
-$zip2->close();
-echo "Successfully built root-level: {$zipRoot}\n";
+$zip3->close();
+echo "Successfully built cPanel/FTP extract ZIP: {$zipCpanel}\n";
 
-// Verify both archives
-foreach ( array( 'Standard' => $zipStandard, 'Root-level' => $zipRoot ) as $label => $file ) {
+// Verification
+foreach ( array( 'WordPress Admin Upload' => $zipWPAdmin, 'cPanel Folder Extract' => $zipCpanel ) as $label => $file ) {
 	$verify = new ZipArchive();
 	if ( $verify->open( $file ) === true ) {
 		$hasStyle = false;
 		for ( $i = 0; $i < $verify->numFiles; $i++ ) {
 			$name = $verify->getNameIndex( $i );
-			if ( $name === 'code-elta6ur-theme/style.css' || $name === 'style.css' ) {
+			if ( $name === 'style.css' || $name === 'code-elta6ur-theme/style.css' ) {
 				$hasStyle = true;
 			}
 		}
