@@ -50,4 +50,7 @@ require_once CDT_THEME_DIR . '/inc/gamification/gamification-init.php';
 require_once CDT_THEME_DIR . '/inc/accounts/accounts-init.php';
 require_once CDT_THEME_DIR . '/inc/admin/gamification-admin.php';
 
+// SEO Health & Google Search Console Indexing Engine
+require_once CDT_THEME_DIR . '/inc/seo-health/seo-health-init.php';
+
 
