@@ -14,16 +14,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header();
 
+// Code Elta6ur Page Header & Breadcrumbs
+get_template_part( 'template-parts/hero/hero-page' );
+cdt_breadcrumbs();
+
 $is_elementor = cdt_is_elementor_page();
 ?>
 
-<?php if ( ! $is_elementor ) : ?>
-	<?php get_template_part( 'template-parts/hero/hero-page' ); ?>
-	<?php cdt_breadcrumbs(); ?>
-<?php endif; ?>
-
-<div class="<?php echo $is_elementor ? 'cdt-elementor-page-container' : 'cdt-section'; ?>">
-	<div class="<?php echo $is_elementor ? 'cdt-elementor-full-container' : 'cdt-container-narrow'; ?>">
+<div class="cdt-section" style="padding-block: var(--space-8, 2rem);">
+	<div class="<?php echo $is_elementor ? 'cdt-container' : 'cdt-container-narrow'; ?>">
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -41,3 +40,4 @@ $is_elementor = cdt_is_elementor_page();
 
 <?php
 get_footer();
+

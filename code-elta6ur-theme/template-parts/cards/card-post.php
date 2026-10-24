@@ -10,10 +10,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$categories = get_the_category();
-$category_name = ! empty( $categories ) ? $categories[0]->name : '';
-$category_link = ! empty( $categories ) ? get_category_link( $categories[0]->term_id ) : '';
-$reading_time = cdt_get_reading_time();
+$display_cat   = function_exists( 'cdt_get_display_category' ) ? cdt_get_display_category() : null;
+$category_name = $display_cat ? $display_cat->name : '';
+$category_link = $display_cat ? get_category_link( $display_cat->term_id ) : '';
+$reading_time  = cdt_get_reading_time();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'cdt-card cdt-post-card' ); ?>>

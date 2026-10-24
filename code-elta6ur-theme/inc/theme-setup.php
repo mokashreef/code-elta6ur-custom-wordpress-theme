@@ -57,8 +57,8 @@ if ( ! function_exists( 'cdt_theme_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 118,
-				'width'       => 118,
+				'height'      => 60,
+				'width'       => 200,
 				'flex-width'  => true,
 				'flex-height' => true,
 			)
@@ -80,3 +80,95 @@ function cdt_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'cdt_content_width', 1240 );
 }
 add_action( 'after_setup_theme', 'cdt_content_width', 0 );
+
+/**
+ * Exclude course lessons from main blog archive queries (home, blog index)
+ *
+ * @param WP_Query $query The main query instance.
+ */
+function cdt_filter_main_blog_query( $query ) {
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
+
+	// Only filter on blog index / home query
+	if ( $query->is_home() ) {
+		$course_cat_ids = function_exists( 'cdt_get_course_category_ids' ) ? cdt_get_course_category_ids() : array();
+		if ( ! empty( $course_cat_ids ) ) {
+			$query->set( 'category__not_in', $course_cat_ids );
+		}
+	}
+}
+add_action( 'pre_get_posts', 'cdt_filter_main_blog_query' );
+
+/**
+ * Automatically assign correct templates for Code Elta6ur core pages & categories
+ * ensuring 100% compatibility across Linux/Windows hosting environments without non-ASCII filename dependencies.
+ *
+ * @param string $template Path to the template.
+ * @return string
+ */
+function cdt_template_redirect_loader( $template ) {
+	if ( is_page() ) {
+		$post_id   = get_the_ID();
+		$raw_slug  = urldecode( get_post_field( 'post_name', $post_id ) );
+		$page_slug = sanitize_title( $raw_slug );
+
+		// 1. Blog page (/المدونة/ or ID 40)
+		if ( 40 === $post_id || 'المدونة' === $raw_slug || 'blog' === $page_slug ) {
+			$found = locate_template( 'template-blog.php' );
+			if ( $found ) {
+				return $found;
+			}
+		}
+
+		// 2. Courses hub (/الكورسات-التعليمية/ or ID 832)
+		if ( 832 === $post_id || 'الكورسات-التعليمية' === $raw_slug || 'courses' === $page_slug || 'الكورسات-التعليمية' === $page_slug ) {
+			$found = locate_template( 'template-courses.php' );
+			if ( $found ) {
+				return $found;
+			}
+		}
+
+		// 3. About page (/من-نحن/ or ID 233)
+		if ( 233 === $post_id || 'من-نحن' === $raw_slug || 'about' === $page_slug ) {
+			$found = locate_template( 'template-about.php' );
+			if ( $found ) {
+				return $found;
+			}
+		}
+
+		// 4. Contact page (/اتصل-بنا/ or ID 43)
+		if ( 43 === $post_id || 'اتصل-بنا' === $raw_slug || 'contact' === $page_slug ) {
+			$found = locate_template( 'template-contact.php' );
+			if ( $found ) {
+				return $found;
+			}
+		}
+
+		// 5. Individual Course Syllabus pages (HTML: 822, CSS: 827, Bootstrap: 1197, JS: 1273, React: 1372, C++: 2733)
+		$course_page_ids = array( 822, 827, 1197, 1273, 1372, 2733 );
+		if ( in_array( $post_id, $course_page_ids, true ) || 0 === strpos( $raw_slug, 'كورس-' ) || 'typescript' === $page_slug || 'كورس-typescript' === $raw_slug ) {
+			$found = locate_template( 'template-course-single.php' );
+			if ( $found ) {
+				return $found;
+			}
+		}
+	}
+
+	// 6. AI Category Archive (/category/الذكاء-الاصطناعي/ or ID 9)
+	if ( is_category() ) {
+		$cat = get_queried_object();
+		if ( $cat && ( 9 === (int) $cat->term_id || 'الذكاء-الاصطناعي' === urldecode( $cat->slug ) ) ) {
+			$found = locate_template( array( 'category-9.php', 'template-ai.php' ) );
+			if ( $found ) {
+				return $found;
+			}
+		}
+	}
+
+	return $template;
+}
+add_filter( 'template_include', 'cdt_template_redirect_loader', 99 );
+
+

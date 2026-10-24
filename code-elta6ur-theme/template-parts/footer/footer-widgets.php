@@ -50,8 +50,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<h4><?php esc_html_e( 'روابط سريعة', 'code-elta6ur' ); ?></h4>
 			<ul class="cdt-footer-links">
 				<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'الرئيسية', 'code-elta6ur' ); ?></a></li>
+				<li><a href="<?php echo esc_url( home_url( '/tools/' ) ); ?>"><?php esc_html_e( 'الأدوات التقنية (30 أداة)', 'code-elta6ur' ); ?></a></li>
+				<li><a href="<?php echo esc_url( home_url( '/editor/' ) ); ?>"><?php esc_html_e( 'محرر الأكواد أونلاين', 'code-elta6ur' ); ?></a></li>
 				<li><a href="<?php echo esc_url( home_url( '/%d8%a7%d9%84%d9%83%d9%88%d8%b1%d8%b3%d8%a7%d8%aa-%d8%a7%d9%84%d8%aa%d8%b9%d9%84%d9%8a%d9%85%d9%8a%d8%a9/' ) ); ?>"><?php esc_html_e( 'الكورسات التعليمية', 'code-elta6ur' ); ?></a></li>
 				<li><a href="<?php echo esc_url( home_url( '/%d8%a7%d9%84%d9%85%d8%af%d9%88%d9%86%d8%a9/' ) ); ?>"><?php esc_html_e( 'المدونة البرمجية', 'code-elta6ur' ); ?></a></li>
+				<li><a href="<?php echo esc_url( function_exists( 'cdt_get_ai_section_url' ) ? cdt_get_ai_section_url() : home_url( '/category/%d8%a7%d9%84%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d9%84%d8%a7%d8%b5%d8%b7%d9%86%d8%a7%d8%b9%d9%8a/' ) ); ?>"><?php esc_html_e( 'قسم الذكاء الاصطناعي', 'code-elta6ur' ); ?></a></li>
 				<li><a href="<?php echo esc_url( home_url( '/series/' ) ); ?>"><?php esc_html_e( 'السلاسل التعليمية', 'code-elta6ur' ); ?></a></li>
 				<li><a href="<?php echo esc_url( home_url( '/%d9%85%d9%86-%d9%86%d8%ad%d9%86/' ) ); ?>"><?php esc_html_e( 'عن كود التطور', 'code-elta6ur' ); ?></a></li>
 				<li><a href="<?php echo esc_url( home_url( '/%d8%a7%d8%aa%d8%b5%d9%84-%d8%a8%d9%86%d8%a7/' ) ); ?>"><?php esc_html_e( 'اتصل بنا', 'code-elta6ur' ); ?></a></li>

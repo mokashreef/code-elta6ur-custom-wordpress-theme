@@ -34,7 +34,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<a href="<?php echo esc_url( home_url( '/%d8%a7%d9%84%d9%83%d9%88%d8%b1%d8%b3%d8%a7%d8%aa-%d8%a7%d9%84%d8%aa%d8%b9%d9%84%d9%8a%d9%85%d9%8a%d8%a9/' ) ); ?>"><?php esc_html_e( 'الكورسات التعليمية', 'code-elta6ur' ); ?></a>
 			</li>
 			<li>
+				<a href="<?php echo esc_url( home_url( '/tools/' ) ); ?>"><?php esc_html_e( 'الأدوات التقنية', 'code-elta6ur' ); ?></a>
+			</li>
+			<li>
+				<a href="<?php echo esc_url( home_url( '/editor/' ) ); ?>"><?php esc_html_e( 'محرر الأكواد', 'code-elta6ur' ); ?></a>
+			</li>
+			<li>
 				<a href="<?php echo esc_url( home_url( '/%d8%a7%d9%84%d9%85%d8%af%d9%88%d9%86%d8%a9/' ) ); ?>"><?php esc_html_e( 'المدونة', 'code-elta6ur' ); ?></a>
+			</li>
+			<li class="<?php echo ( is_category( 9 ) || is_category( 'الذكاء-الاصطناعي' ) ) ? 'current-menu-item' : ''; ?>">
+				<a href="<?php echo esc_url( function_exists( 'cdt_get_ai_section_url' ) ? cdt_get_ai_section_url() : home_url( '/category/%d8%a7%d9%84%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d9%84%d8%a7%d8%b5%d8%b7%d9%86%d8%a7%d8%b9%d9%8a/' ) ); ?>"><?php esc_html_e( 'الذكاء الاصطناعي', 'code-elta6ur' ); ?></a>
 			</li>
 			<li>
 				<a href="<?php echo esc_url( home_url( '/series/' ) ); ?>"><?php esc_html_e( 'السلاسل', 'code-elta6ur' ); ?></a>

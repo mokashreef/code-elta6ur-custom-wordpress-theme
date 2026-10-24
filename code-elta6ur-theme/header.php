@@ -38,6 +38,21 @@ if ( function_exists( 'wp_body_open' ) ) {
 				<?php get_template_part( 'template-parts/header/primary-nav' ); ?>
 
 				<div class="cdt-header-actions">
+					<?php if ( is_user_logged_in() ) : 
+						$uid = get_current_user_id();
+						$u_pts = function_exists( 'cdt_get_user_points' ) ? cdt_get_user_points( $uid ) : 0;
+						?>
+						<a href="<?php echo esc_url( function_exists( 'cdt_get_account_page_url' ) ? cdt_get_account_page_url( 'account' ) : home_url( '/my-account/' ) ); ?>" class="cdt-header-user-widget" title="<?php esc_attr_e( 'حسابي', 'code-elta6ur' ); ?>">
+							<?php echo get_avatar( $uid, 26, '', '', array( 'style' => 'border-radius: 50%; vertical-align: middle; display: inline-block;' ) ); ?>
+							<span class="cdt-user-points-badge" style="background: rgba(1, 112, 185, 0.1); color: var(--brand-primary, #0170B9); padding: 2px 8px; border-radius: var(--radius-full, 9999px); font-size: 0.75rem; font-weight: 800;">💎 <?php echo esc_html( $u_pts ); ?></span>
+						</a>
+					<?php else : ?>
+						<a href="<?php echo esc_url( function_exists( 'cdt_get_account_page_url' ) ? cdt_get_account_page_url( 'login' ) : home_url( '/login/' ) ); ?>" class="cdt-header-user-widget cdt-header-login-btn" style="color: var(--brand-primary, #0170B9); font-weight: 700;">
+							<?php echo cdt_svg_icon( 'user' ); ?>
+							<span class="cdt-header-login-text"><?php esc_html_e( 'دخول', 'code-elta6ur' ); ?></span>
+						</a>
+					<?php endif; ?>
+
 					<button class="cdt-search-toggle" aria-label="<?php esc_attr_e( 'فتح البحث', 'code-elta6ur' ); ?>">
 						<?php echo cdt_svg_icon( 'search' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</button>

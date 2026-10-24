@@ -28,6 +28,42 @@ function cdt_customize_register( $wp_customize ) {
 	);
 
 	// ==========================================
+	// Section: Logo & Branding Size
+	// ==========================================
+	$wp_customize->add_section(
+		'cdt_branding_section',
+		array(
+			'title'       => esc_html__( '🖼️ حجم الشعار والهوية (Logo Size)', 'code-elta6ur' ),
+			'panel'       => 'cdt_theme_panel',
+			'priority'    => 5,
+			'description' => esc_html__( 'تحكم بحجم وارتفاع الشعار في شريط التنقل العلوي بالبكسل.', 'code-elta6ur' ),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'cdt_logo_size',
+		array(
+			'default'           => 46,
+			'sanitize_callback' => 'absint',
+			'transport'         => 'refresh',
+		)
+	);
+	$wp_customize->add_control(
+		'cdt_logo_size',
+		array(
+			'label'       => esc_html__( 'ارتفاع الشعار (Logo Height بالبكسل)', 'code-elta6ur' ),
+			'description' => esc_html__( 'القيمة الافتراضية المناسبة 46px. يمكنك السحب للتكبير أو التصغير.', 'code-elta6ur' ),
+			'section'     => 'cdt_branding_section',
+			'type'        => 'range',
+			'input_attrs' => array(
+				'min'  => 28,
+				'max'  => 90,
+				'step' => 2,
+			),
+		)
+	);
+
+	// ==========================================
 	// Section: Contact & Direct Communication
 	// ==========================================
 	$wp_customize->add_section(
@@ -308,6 +344,25 @@ function cdt_customize_register( $wp_customize ) {
 		)
 	);
 
+	// Toggle Native Front Page Layout vs Elementor
+	$wp_customize->add_setting(
+		'cdt_enable_native_front_page',
+		array(
+			'default'           => true,
+			'sanitize_callback' => 'wp_validate_boolean',
+			'transport'         => 'refresh',
+		)
+	);
+	$wp_customize->add_control(
+		'cdt_enable_native_front_page',
+		array(
+			'label'       => esc_html__( 'تفعيل تصميم كود التطور الأصلي للرئيسية', 'code-elta6ur' ),
+			'description' => esc_html__( 'فعّل هذا الخيار إذا كنت ترغب بتطبيق التصميم البرمجي الجديد للرئيسية وتجاوز صفحة Elementor الحالية.', 'code-elta6ur' ),
+			'section'     => 'cdt_hero_section',
+			'type'        => 'checkbox',
+		)
+	);
+
 	$wp_customize->add_setting(
 		'cdt_hero_title',
 		array(
@@ -415,6 +470,130 @@ function cdt_customize_register( $wp_customize ) {
 			'type'    => 'text',
 		)
 	);
+
+	// ==========================================
+	// Section: Code Execution Settings
+	// ==========================================
+	$wp_customize->add_section(
+		'cdt_editor_section',
+		array(
+			'title'       => esc_html__( '⚡ إعدادات تشغيل الأكواد (Code Execution)', 'code-elta6ur' ),
+			'panel'       => 'cdt_theme_panel',
+			'priority'    => 40,
+			'description' => esc_html__( 'لغات (JavaScript، TypeScript، Python، SQL) تعمل فورياً في متصفح الزائر دون الحاجة لأي خادم. لتشغيل اللغات المجمعة (C, C++, Java, Rust...) يمكنك ربط مشغل Judge0 المجاني من RapidAPI هنا.', 'code-elta6ur' ),
+		)
+	);
+
+	// Execution Provider
+	$wp_customize->add_setting(
+		'cdt_execution_provider',
+		array(
+			'default'           => 'jdoodle',
+			'sanitize_callback' => 'sanitize_key',
+		)
+	);
+	$wp_customize->add_control(
+		'cdt_execution_provider',
+		array(
+			'label'       => esc_html__( 'مزود بيئة تشغيل اللغات المجمعة', 'code-elta6ur' ),
+			'section'     => 'cdt_editor_section',
+			'type'        => 'select',
+			'choices'     => array(
+				'jdoodle' => esc_html__( 'JDoodle (مجاني 100% بدون أي بطاقة بنكية)', 'code-elta6ur' ),
+				'judge0'  => esc_html__( 'Judge0 CE (RapidAPI)', 'code-elta6ur' ),
+				'piston'  => esc_html__( 'Piston Sandbox (خادم خاص VPS)', 'code-elta6ur' ),
+				'null'    => esc_html__( 'محرر فقط (بدون خادم تشغيل للغات المجمعة)', 'code-elta6ur' ),
+			),
+		)
+	);
+
+	// JDoodle Client ID
+	$wp_customize->add_setting(
+		'cdt_jdoodle_client_id',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'cdt_jdoodle_client_id',
+		array(
+			'label'       => esc_html__( 'JDoodle Client ID (مجاني بدون فيزا)', 'code-elta6ur' ),
+			'description' => esc_html__( 'سجل مجاناً بدون بطاقة في jdoodle.com/compiler-api وانسخ Client ID وضعه هنا لتفعيل C++, Java, Rust, Go, PHP...', 'code-elta6ur' ),
+			'section'     => 'cdt_editor_section',
+			'type'        => 'text',
+		)
+	);
+
+	// JDoodle Client Secret
+	$wp_customize->add_setting(
+		'cdt_jdoodle_client_secret',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'cdt_jdoodle_client_secret',
+		array(
+			'label'       => esc_html__( 'JDoodle Client Secret', 'code-elta6ur' ),
+			'section'     => 'cdt_editor_section',
+			'type'        => 'text',
+		)
+	);
+
+	// RapidAPI Key for Judge0
+	$wp_customize->add_setting(
+		'cdt_judge0_key',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'cdt_judge0_key',
+		array(
+			'label'       => esc_html__( 'مفتاح RapidAPI لـ Judge0 (اختياري - اتركه فارغاً)', 'code-elta6ur' ),
+			'description' => esc_html__( 'اترك هذا الحقل فارغاً إذا كنت تستخدم JDoodle.', 'code-elta6ur' ),
+			'section'     => 'cdt_editor_section',
+			'type'        => 'text',
+		)
+	);
+
+	// Judge0 Endpoint
+	$wp_customize->add_setting(
+		'cdt_judge0_endpoint',
+		array(
+			'default'           => 'https://judge0-ce.p.rapidapi.com',
+			'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		'cdt_judge0_endpoint',
+		array(
+			'label'       => esc_html__( 'رابط خادم Judge0 API (اختياري)', 'code-elta6ur' ),
+			'description' => esc_html__( 'اتركه فارغاً أو على القيمة الافتراضية إذا كنت تستخدم JDoodle.', 'code-elta6ur' ),
+			'section'     => 'cdt_editor_section',
+			'type'        => 'text',
+		)
+	);
+
+	// Piston Endpoint
+	$wp_customize->add_setting(
+		'cdt_piston_endpoint',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		'cdt_piston_endpoint',
+		array(
+			'label'       => esc_html__( 'رابط خادم Piston (اختياري - اتركه فارغاً)', 'code-elta6ur' ),
+			'section'     => 'cdt_editor_section',
+			'type'        => 'text',
+		)
+	);
 }
 add_action( 'customize_register', 'cdt_customize_register' );
 
@@ -425,8 +604,10 @@ function cdt_customizer_css() {
 	$primary   = cdt_get_option( 'cdt_primary_color', '#0170B9' );
 	$secondary = cdt_get_option( 'cdt_secondary_color', '#3B82F6' );
 	$accent    = cdt_get_option( 'cdt_accent_color', '#38BDF8' );
+	$logo_size = absint( cdt_get_option( 'cdt_logo_size', 46 ) );
 
 	$custom_css = ":root {
+		--cdt-logo-max-height: {$logo_size}px;
 		--brand-primary: {$primary};
 		--brand-secondary: {$secondary};
 		--brand-accent: {$accent};

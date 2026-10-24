@@ -69,6 +69,7 @@ function cdt_svg_icon( $icon ) {
 		'arrow-left' => '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>',
 		'copy'      => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>',
 		'check'     => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>',
+		'external-link' => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>',
 	);
 
 	return isset( $icons[ $icon ] ) ? $icons[ $icon ] : '';
@@ -105,3 +106,277 @@ function cdt_the_logo() {
 		echo '</a>';
 	}
 }
+
+/**
+ * Retrieves the latest YouTube videos from Code Elta6ur channel dynamically
+ *
+ * Automatically fetches the real feed from https://www.youtube.com/@code-elta6ur/videos,
+ * caches it using a WordPress transient for 6 hours ("أول بأول"), and falls back
+ * to verified channel uploads if offline or rate-limited.
+ *
+ * @param int $limit Number of videos to retrieve. Default 6.
+ * @return array List of video items with 'video_id' and 'title'.
+ */
+function cdt_get_latest_youtube_videos( $limit = 6 ) {
+	$limit = absint( $limit );
+	if ( $limit <= 0 ) {
+		$limit = 6;
+	}
+
+	$transient_key = 'cdt_latest_yt_videos_' . $limit;
+	$cached_videos = get_transient( $transient_key );
+
+	if ( false !== $cached_videos && is_array( $cached_videos ) && ! empty( $cached_videos ) ) {
+		return $cached_videos;
+	}
+
+	$videos = array();
+
+	// 1. Fetch channel feed dynamically from YouTube
+	$channel_url = cdt_get_option( 'cdt_youtube_url', 'https://www.youtube.com/@code-elta6ur' );
+	$fetch_url   = rtrim( $channel_url, '/' ) . '/videos';
+
+	$response = wp_remote_get(
+		$fetch_url,
+		array(
+			'timeout'    => 8,
+			'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+		)
+	);
+
+	if ( ! is_wp_error( $response ) && 200 === (int) wp_remote_retrieve_response_code( $response ) ) {
+		$body = wp_remote_retrieve_body( $response );
+
+		if ( preg_match( '/var ytInitialData\s*=\s*({.+?});<\/script>/s', $body, $matches ) || preg_match( '/ytInitialData\s*=\s*({.+?});/s', $body, $matches ) ) {
+			$json_data = json_decode( $matches[1], true );
+			if ( $json_data && is_array( $json_data ) ) {
+				$extracted = array();
+				$search_fn = function( $item ) use ( &$search_fn, &$extracted, $limit ) {
+					if ( count( $extracted ) >= $limit ) {
+						return;
+					}
+					if ( is_array( $item ) ) {
+						if ( isset( $item['lockupViewModel'] ) ) {
+							$lm    = $item['lockupViewModel'];
+							$vid   = isset( $lm['contentId'] ) ? $lm['contentId'] : '';
+							$title = isset( $lm['metadata']['lockupMetadataViewModel']['title']['content'] ) ? $lm['metadata']['lockupMetadataViewModel']['title']['content'] : '';
+							if ( $vid && $title ) {
+								$extracted[ $vid ] = array(
+									'video_id' => $vid,
+									'title'    => wp_strip_all_tags( $title ),
+								);
+							}
+						} elseif ( isset( $item['videoRenderer'] ) ) {
+							$vr    = $item['videoRenderer'];
+							$vid   = isset( $vr['videoId'] ) ? $vr['videoId'] : '';
+							$title = '';
+							if ( isset( $vr['title']['runs'][0]['text'] ) ) {
+								$title = $vr['title']['runs'][0]['text'];
+							} elseif ( isset( $vr['title']['simpleText'] ) ) {
+								$title = $vr['title']['simpleText'];
+							}
+							if ( $vid && $title ) {
+								$extracted[ $vid ] = array(
+									'video_id' => $vid,
+									'title'    => wp_strip_all_tags( $title ),
+								);
+							}
+						}
+						foreach ( $item as $sub ) {
+							if ( is_array( $sub ) ) {
+								$search_fn( $sub );
+							}
+						}
+					}
+				};
+
+				$search_fn( $json_data );
+
+				if ( ! empty( $extracted ) ) {
+					$videos = array_values( $extracted );
+				}
+			}
+		}
+	}
+
+	// 2. Fallback to verified real channel uploads from @code-elta6ur
+	if ( empty( $videos ) ) {
+		$videos = array(
+			array(
+				'video_id' => 'YrbvArm6Lt0',
+				'title'    => esc_html__( 'The Complete Story of JavaScript | How It Started and Why It Became the World\'s Language', 'code-elta6ur' ),
+			),
+			array(
+				'video_id' => '0lBfrJ5W8FM',
+				'title'    => esc_html__( 'بعد سنتين من البرمجة... أخيرًا رح أريكم ماذا بنيت! | Code Ora', 'code-elta6ur' ),
+			),
+			array(
+				'video_id' => 'QaUWW9WIeYc',
+				'title'    => esc_html__( 'Is it worth wasting two years of your life on one project?', 'code-elta6ur' ),
+			),
+			array(
+				'video_id' => 'N6xC8NC9uE0',
+				'title'    => esc_html__( 'Do You Use VS Code? These Are the AI Extensions You Need Now', 'code-elta6ur' ),
+			),
+			array(
+				'video_id' => 'UwKH4VEBaWo',
+				'title'    => esc_html__( 'Shed GPT 5.6 vs. Claude Fable 5 | Which Is Better for Your Work?', 'code-elta6ur' ),
+			),
+			array(
+				'video_id' => 'x6QbqCUnc1M',
+				'title'    => esc_html__( 'The Journey of Building Code Ora: Challenges, Mistakes, and Results!', 'code-elta6ur' ),
+			),
+			array(
+				'video_id' => '63fDnnA6VyI',
+				'title'    => esc_html__( 'I stopped using AI for a day... and the difference is huge!', 'code-elta6ur' ),
+			),
+			array(
+				'video_id' => 'YNP9nig4x3c',
+				'title'    => esc_html__( 'The Hardest Part of Programming Isn\'t Learning It... It\'s Surviving It', 'code-elta6ur' ),
+			),
+			array(
+				'video_id' => 'gbgitGWIa24',
+				'title'    => esc_html__( 'البرمجة اليدوية انتهت؟ تسريبات ChatGPT تقول نعم!', 'code-elta6ur' ),
+			),
+		);
+	}
+
+	$videos = array_slice( $videos, 0, $limit );
+
+	// Cache in transient for 6 hours
+	set_transient( $transient_key, $videos, 6 * HOUR_IN_SECONDS );
+
+	return $videos;
+}
+
+/**
+ * Returns the accredited course category IDs that represent learning tracks
+ * (HTML: 53, CSS: 62, Bootstrap: 71, JavaScript: 74, React: 76, C++: 80, TypeScript: 119)
+ *
+ * @return int[] List of course category IDs.
+ */
+function cdt_get_course_category_ids() {
+	$course_cat_ids = array( 53, 62, 71, 74, 76, 80, 119 );
+
+	// If gamification course progress engine is loaded, sync dynamically
+	if ( function_exists( 'cdt_get_courses_catalog' ) ) {
+		$catalog = cdt_get_courses_catalog();
+		foreach ( $catalog as $course ) {
+			if ( ! empty( $course['cat_id'] ) ) {
+				$course_cat_ids[] = absint( $course['cat_id'] );
+			}
+		}
+		$course_cat_ids = array_values( array_unique( $course_cat_ids ) );
+	}
+
+	return apply_filters( 'cdt_course_category_ids', $course_cat_ids );
+}
+
+/**
+ * Checks whether a given category ID belongs to a course track
+ *
+ * @param int $category_id Category Term ID.
+ * @return bool
+ */
+function cdt_is_course_category( $category_id ) {
+	$category_id = absint( $category_id );
+	if ( ! $category_id ) {
+		return false;
+	}
+	return in_array( $category_id, cdt_get_course_category_ids(), true );
+}
+
+/**
+ * Returns the primary category ID for Artificial Intelligence
+ *
+ * @return int Term ID (Default: 9).
+ */
+function cdt_get_ai_category_id() {
+	$term = get_category_by_slug( 'الذكاء-الاصطناعي' );
+	if ( $term && ! is_wp_error( $term ) ) {
+		return (int) $term->term_id;
+	}
+	return 9;
+}
+
+/**
+ * Returns the canonical URL for the Artificial Intelligence section
+ *
+ * @return string
+ */
+function cdt_get_ai_section_url() {
+	$ai_id = cdt_get_ai_category_id();
+	$link  = get_category_link( $ai_id );
+	if ( ! empty( $link ) && ! is_wp_error( $link ) ) {
+		return $link;
+	}
+	return home_url( '/category/%d8%a7%d9%84%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d9%84%d8%a7%d8%b5%d8%b7%d9%86%d8%a7%d8%b9%d9%8a/' );
+}
+
+/**
+ * Determines the category object to visually display to the visitor on post cards and article views.
+ *
+ * Requirements:
+ * - Visually hides "الذكاء الاصطناعي" from the category badge on cards and single articles.
+ * - If the post has multiple categories (e.g. AI + Tech or AI + Learn Programming),
+ *   it selects the companion general category so a badge can still be displayed.
+ * - If the post ONLY belongs to "الذكاء الاصطناعي", it returns null so no badge displaying
+ *   the forbidden category name is shown to the visitor.
+ * - Preserves the category relationship in the database, REST API, sitemaps, and search engines 100%.
+ *
+ * @param int|null $post_id Post ID.
+ * @return WP_Term|null Category object to display, or null if hidden.
+ */
+function cdt_get_display_category( $post_id = null ) {
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
+	if ( ! $post_id ) {
+		return null;
+	}
+
+	$categories = get_the_category( $post_id );
+	if ( empty( $categories ) || is_wp_error( $categories ) ) {
+		return null;
+	}
+
+	$ai_cat_id = cdt_get_ai_category_id();
+
+	// Search for the first category that is NOT AI
+	foreach ( $categories as $cat ) {
+		$cat_id = (int) $cat->term_id;
+		$slug   = urldecode( $cat->slug );
+		if ( $cat_id !== $ai_cat_id && 'الذكاء-الاصطناعي' !== $slug && esc_html__( 'الذكاء الاصطناعي', 'code-elta6ur' ) !== $cat->name && 'الذكاء الاصطناعي' !== $cat->name ) {
+			return $cat;
+		}
+	}
+
+	// Post only belongs to AI category - hide visual name from visitor
+	return null;
+}
+
+/**
+ * Retrieves general blog categories excluding course-specific categories
+ *
+ * @param array $args Additional get_categories arguments.
+ * @return WP_Term[]
+ */
+function cdt_get_general_blog_categories( $args = array() ) {
+	$defaults = array(
+		'orderby'    => 'count',
+		'order'      => 'DESC',
+		'hide_empty' => true,
+		'exclude'    => cdt_get_course_category_ids(),
+	);
+
+	$parsed_args = wp_parse_args( $args, $defaults );
+	// Ensure course categories are always excluded
+	if ( ! empty( $parsed_args['exclude'] ) && is_array( $parsed_args['exclude'] ) ) {
+		$parsed_args['exclude'] = array_unique( array_merge( $parsed_args['exclude'], cdt_get_course_category_ids() ) );
+	} else {
+		$parsed_args['exclude'] = cdt_get_course_category_ids();
+	}
+
+	return get_categories( $parsed_args );
+}
+

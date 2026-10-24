@@ -34,17 +34,17 @@ get_header();
 				<?php esc_html_e( 'جميع المقالات', 'code-elta6ur' ); ?>
 			</a>
 
+			<a href="<?php echo esc_url( function_exists( 'cdt_get_ai_section_url' ) ? cdt_get_ai_section_url() : home_url( '/category/%d8%a7%d9%84%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d9%84%d8%a7%d8%b5%d8%b7%d9%86%d8%a7%d8%b9%d9%8a/' ) ); ?>" class="cdt-badge cdt-badge-accent" style="padding: 6px 16px; font-size: 0.85rem; text-decoration: none;">
+				🤖 <?php esc_html_e( 'قسم الذكاء الاصطناعي', 'code-elta6ur' ); ?>
+			</a>
+
 			<?php
-			$categories = get_categories(
-				array(
-					'orderby'    => 'count',
-					'order'      => 'DESC',
-					'number'     => 10,
-					'hide_empty' => true,
-				)
-			);
+			$categories = function_exists( 'cdt_get_general_blog_categories' ) ? cdt_get_general_blog_categories( array( 'number' => 10 ) ) : get_categories( array( 'number' => 10, 'hide_empty' => true ) );
 
 			foreach ( $categories as $cat ) :
+				if ( (int) $cat->term_id === 9 || 'الذكاء-الاصطناعي' === urldecode( $cat->slug ) ) {
+					continue;
+				}
 				?>
 				<a href="<?php echo esc_url( get_category_link( $cat->term_id ) ); ?>" class="cdt-badge" style="padding: 6px 14px; font-size: 0.85rem; text-decoration: none;">
 					<?php echo esc_html( $cat->name ); ?> (<?php echo esc_html( $cat->count ); ?>)

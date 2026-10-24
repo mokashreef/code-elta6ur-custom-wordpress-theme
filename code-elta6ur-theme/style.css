@@ -4,7 +4,7 @@ Theme URI: https://code-elta6ur.com/
 Author: Mohammad Abu Khashreef
 Author URI: https://mohammad.code-elta6ur.com/
 Description: قالب ووردبريس حصري وخاص بمنصة كود التطور التعليمية. مبني بمعمارية حديثة وسريعة ومستقلة، تدعم التايبوجرافي العربي الأصيل (RTL)، مع مركزية كاملة لبيانات التواصل والسوشيال والشعار، ونظام Block Patterns أصلي يغني عن الحاجة لـ Elementor في الصفحات الجديدة.
-Version: 1.0.0
+Version: 1.2.5
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
@@ -110,6 +110,7 @@ Tags: education, blog, custom-header, custom-menu, featured-images, rtl-language
   --container-max: 1240px;
   --container-narrow: 860px;
   --header-height: 80px;
+  --header-height-mobile: 64px;
 
   /* Transitions */
   --transition-fast: 0.15s ease;

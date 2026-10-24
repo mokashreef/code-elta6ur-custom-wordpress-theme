@@ -182,14 +182,19 @@ get_header();
 
 		<div class="cdt-grid-3">
 			<?php
-			$recent_posts = new WP_Query(
-				array(
-					'post_type'           => 'post',
-					'posts_per_page'      => 6,
-					'ignore_sticky_posts' => true,
-					'post_status'         => 'publish',
-				)
+			$course_cat_ids = function_exists( 'cdt_get_course_category_ids' ) ? cdt_get_course_category_ids() : array();
+			$recent_query_args = array(
+				'post_type'           => 'post',
+				'posts_per_page'      => 6,
+				'ignore_sticky_posts' => true,
+				'post_status'         => 'publish',
 			);
+
+			if ( ! empty( $course_cat_ids ) ) {
+				$recent_query_args['category__not_in'] = $course_cat_ids;
+			}
+
+			$recent_posts = new WP_Query( $recent_query_args );
 
 			if ( $recent_posts->have_posts() ) :
 				while ( $recent_posts->have_posts() ) :
@@ -229,20 +234,7 @@ get_header();
 
 		<div class="cdt-grid-3">
 			<?php
-			$youtube_videos = array(
-				array(
-					'video_id' => 'u9Y_8aJd2xU',
-					'title'    => esc_html__( 'دورة TypeScript الشاملة من الصفر حتى الاحتراف', 'code-elta6ur' ),
-				),
-				array(
-					'video_id' => 'M7lc1UVf-VE',
-					'title'    => esc_html__( 'أساسيات وتطبيقات لغة البرمجة والمشاريع العملية', 'code-elta6ur' ),
-				),
-				array(
-					'video_id' => 'kJQP7kiw5Fk',
-					'title'    => esc_html__( 'كيف تبدأ مسارك المهني في تطوير الويب والعمل الحر؟', 'code-elta6ur' ),
-				),
-			);
+			$youtube_videos = cdt_get_latest_youtube_videos( 6 );
 
 			foreach ( $youtube_videos as $vid ) {
 				get_template_part( 'template-parts/cards/card-video', null, $vid );

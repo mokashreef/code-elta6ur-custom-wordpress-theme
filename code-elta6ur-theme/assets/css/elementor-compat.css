@@ -1,24 +1,55 @@
 /* ==========================================================================
-   كود التطور - طبقة التوافق والعزل لصفحات Elementor
-   Code Elta6ur - Elementor Graceful Coexistence & Compatibility Layer
+   كود التطور - طبقة التوافق والعزل الكامل لصفحات Elementor
+   Code Elta6ur - Elementor & Page Builders Comprehensive Coexistence Layer
    ========================================================================== */
 
-/* Isolation wrapper for Elementor content */
-.cdt-has-elementor .cdt-main-content {
-  padding-block: 0;
-}
-
-.cdt-elementor-wrapper {
+/* 1. Elementor Containers: 100% Unconstrained Full-Width */
+.cdt-elementor-page-container,
+.cdt-elementor-full-container,
+.cdt-elementor-wrapper,
+.cdt-elementor-main-content {
   width: 100%;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
   position: relative;
+  box-sizing: border-box;
 }
 
-/* Ensure Elementor full-width sections are not constrained by theme container */
+.cdt-has-elementor #main-content,
+.cdt-has-elementor .cdt-main-content {
+  padding-block: 0 !important;
+}
+
+/* 2. Preserve Elementor Boxed & Stretched Layouts */
 .cdt-has-elementor .elementor-section.elementor-section-boxed > .elementor-container {
   max-width: var(--container-max, 1240px);
 }
 
-/* Prevent Elementor typography override on theme header and footer */
+.elementor-section.elementor-section-stretched {
+  width: 100% !important;
+  max-width: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* 3. Protect Elementor Widgets, Icons & Buttons */
+.elementor svg,
+.elementor-widget svg,
+.elementor-icon svg,
+.elementor-button svg {
+  display: inline-block !important;
+  vertical-align: middle;
+}
+
+.elementor-button {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 4. Prevent Elementor typography override on theme header and footer */
 .cdt-site-header,
 .cdt-site-footer {
   font-family: var(--font-base, 'Cairo', system-ui, sans-serif) !important;
@@ -28,3 +59,26 @@
 .cdt-site-footer a {
   font-family: inherit !important;
 }
+
+/* 5. Forminator UI Compatibility */
+.forminator-ui {
+  font-family: inherit !important;
+  direction: rtl;
+}
+
+.forminator-ui .forminator-row {
+  margin-block-end: 1rem;
+}
+
+/* 6. Ultimate Member Compatibility */
+.um {
+  font-family: inherit !important;
+  direction: rtl;
+}
+
+.um .um-form input[type="text"],
+.um .um-form input[type="password"],
+.um .um-form input[type="email"] {
+  font-family: inherit !important;
+}
+

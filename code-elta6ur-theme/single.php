@@ -34,14 +34,24 @@ get_header();
 			// Related Posts Section
 			$current_categories = wp_get_post_categories( get_the_ID() );
 			if ( ! empty( $current_categories ) ) {
-				$related_query = new WP_Query(
-					array(
-						'category__in'   => $current_categories,
-						'post__not_in'   => array( get_the_ID() ),
-						'posts_per_page' => 3,
-						'orderby'        => 'rand',
-					)
+				$course_cat_ids   = function_exists( 'cdt_get_course_category_ids' ) ? cdt_get_course_category_ids() : array();
+				$is_course_lesson = function_exists( 'cdt_is_post_a_course_lesson' ) && cdt_is_post_a_course_lesson( get_the_ID() );
+
+				$related_args = array(
+					'category__in'        => $current_categories,
+					'post__not_in'        => array( get_the_ID() ),
+					'posts_per_page'      => 3,
+					'orderby'             => 'rand',
+					'ignore_sticky_posts' => true,
+					'post_status'         => 'publish',
 				);
+
+				// If general post, do not mix in course lessons
+				if ( ! $is_course_lesson && ! empty( $course_cat_ids ) ) {
+					$related_args['category__not_in'] = $course_cat_ids;
+				}
+
+				$related_query = new WP_Query( $related_args );
 
 				if ( $related_query->have_posts() ) :
 					?>

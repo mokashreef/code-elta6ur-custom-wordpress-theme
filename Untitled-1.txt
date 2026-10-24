@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="csrf-token" content="Ex3kAz1RtGhesrx19XaKv8q0kWF8gWygANEfHZi6">
+
+    <title>هاردوير بيس — قاعدة المعرفة الشاملة للهاردوير والصيانة</title>
+    <meta name="description" content="قاعدة المعرفة العتادية الشاملة للهواتف والقطع والإلكترونيات والصيانة.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hardwarebase.code-elta6ur.com/ar">
+
+    
+    <meta property="og:title" content="هاردوير بيس — قاعدة المعرفة الشاملة للهاردوير والصيانة">
+    <meta property="og:description" content="قاعدة المعرفة العتادية الشاملة للهواتف والقطع والإلكترونيات والصيانة.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hardwarebase.code-elta6ur.com/ar">
+    <meta property="og:site_name" content="هاردوير بيس">
+    
+    
+        <link rel="alternate" hreflang="ar" href="https://hardwarebase.code-elta6ur.com/ar">
+    <link rel="alternate" hreflang="en" href="https://hardwarebase.code-elta6ur.com/ar">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://hardwarebase.code-elta6ur.com/css/app.css?v=1790027115">
+    
+    
+    
+    
+    
+    
+        <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "هاردوير بيس",
+        "url": "https://hardwarebase.code-elta6ur.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://hardwarebase.code-elta6ur.com/ar/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    </head>
+<body dir="rtl">
+
+    
+    <header class="header">
+        <div class="header-inner">
+            <a href="https://hardwarebase.code-elta6ur.com/ar" class="logo">
+                <div class="logo-icon">HB</div>
+                <div class="logo-text">Hardware<span>Base</span></div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="https://hardwarebase.code-elta6ur.com/ar" class="active">الرئيسية</a>
+                <a href="https://hardwarebase.code-elta6ur.com/ar/categories" class="">التصنيفات</a>
+                <a href="https://hardwarebase.code-elta6ur.com/ar/devices" class="">الأجهزة</a>
+                <a href="https://hardwarebase.code-elta6ur.com/ar/schematics" class="">المخططات</a>
+                <a href="https://hardwarebase.code-elta6ur.com/ar/pinouts" class="">المنافذ والنقاط</a>
+                <a href="https://hardwarebase.code-elta6ur.com/ar/error-codes" class="">أكواد الأعطال</a>
+                <a href="https://hardwarebase.code-elta6ur.com/ar/ics" class="">الدوائر المتكاملة (IC)</a>
+                <a href="https://hardwarebase.code-elta6ur.com/ar/problems" class="">المشاكل والأعطال</a>
+                <a href="https://hardwarebase.code-elta6ur.com/ar/solutions" class="">الحلول والإصلاحات</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="https://hardwarebase.code-elta6ur.com/ar/app" class="app-btn-nav"><svg viewBox="0 0 24 24"
+     width="15"
+     height="15"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+<span>التطبيق</span></a>
+                <button type="button" class="header-search-btn" id="mobile-search-btn" aria-label="Search">
+                    <svg viewBox="0 0 24 24"
+     width="18"
+     height="18"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+</svg>
+                </button>
+
+                <a href="https://hardwarebase.code-elta6ur.com/en" class="lang-switcher">
+                    <svg viewBox="0 0 24 24"
+     width="14"
+     height="14"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+</svg>
+                    <span>English</span>
+                </a>
+
+                
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+                    <svg viewBox="0 0 24 24"
+     width="22"
+     height="22"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
+</svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    
+    <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop"></div>
+    <div class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+        <div class="mobile-drawer-header">
+            <a href="https://hardwarebase.code-elta6ur.com/ar" class="logo">
+                <div class="logo-icon">HB</div>
+                <div class="logo-text">Hardware<span>Base</span></div>
+            </a>
+            <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close Navigation">
+                <svg viewBox="0 0 24 24"
+     width="20"
+     height="20"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+</svg>
+            </button>
+        </div>
+
+        <div class="mobile-drawer-body">
+            <div class="mobile-drawer-section-title">الأجهزة والمخططات</div>
+            <a href="https://hardwarebase.code-elta6ur.com/ar" class="mobile-drawer-link active">
+                <span class="mobile-drawer-icon"><svg viewBox="0 0 24 24"
+     width="16"
+     height="16"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+</svg>
+</span>
+                <span>الرئيسية</span>
+            </a>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/devices" class="mobile-drawer-link ">
+                <span class="mobile-drawer-icon"><svg viewBox="0 0 24 24"
+     width="16"
+     height="16"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+</span>
+                <span>الأجهزة</span>
+            </a>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/categories" class="mobile-drawer-link ">
+                <span class="mobile-drawer-icon"><svg viewBox="0 0 24 24"
+     width="16"
+     height="16"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+</svg>
+</span>
+                <span>التصنيفات</span>
+            </a>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/schematics" class="mobile-drawer-link ">
+                <span class="mobile-drawer-icon"><svg viewBox="0 0 24 24"
+     width="16"
+     height="16"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="2" y="2" width="20" height="20" rx="3"/><path d="M6 6h4v4H6zm8 0h4v4h-4zm0 8h4v4h-4zM6 14h4v4H6z"/><path d="M10 8h4m-4 8h4m-6-4v2m8-2v2"/>
+</svg>
+</span>
+                <span>المخططات والبورد فيو</span>
+            </a>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/pinouts" class="mobile-drawer-link ">
+                <span class="mobile-drawer-icon"><svg viewBox="0 0 24 24"
+     width="16"
+     height="16"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6m-6 12h6M6 9v6m12-9v6"/>
+</svg>
+</span>
+                <span>المنافذ والنقاط الفنية</span>
+            </a>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/error-codes" class="mobile-drawer-link ">
+                <span class="mobile-drawer-icon"><svg viewBox="0 0 24 24"
+     width="16"
+     height="16"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+</svg>
+</span>
+                <span>أكواد الأعطال</span>
+            </a>
+
+            <div class="mobile-drawer-section-title">المكونات وقطع الغيار</div>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/ics" class="mobile-drawer-link ">
+                <span class="mobile-drawer-icon"><svg viewBox="0 0 24 24"
+     width="16"
+     height="16"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
+</svg>
+</span>
+                <span>الدوائر المتكاملة (IC)</span>
+            </a>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/screens" class="mobile-drawer-link ">
+                <span class="mobile-drawer-icon"><svg viewBox="0 0 24 24"
+     width="16"
+     height="16"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+</svg>
+</span>
+                <span>الشاشات</span>
+            </a>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/batteries" class="mobile-drawer-link ">
+                <span class="mobile-drawer-icon"><svg viewBox="0 0 24 24"
+     width="16"
+     height="16"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="10" x2="23" y2="14"/>
+</svg>
+</span>
+                <span>البطاريات</span>
+            </a>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/connectors" class="mobile-drawer-link ">
+                <span class="mobile-drawer-icon"><svg viewBox="0 0 24 24"
+     width="16"
+     height="16"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <path d="M12 2v6m0 0l-3 3m3-3l3 3M7 11h10v7a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3v-7zm2 10v3m6-3v3"/>
+</svg>
+</span>
+                <span>الموصّلات</span>
+            </a>
+
+            <div class="mobile-drawer-section-title">الصيانة والحلول</div>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/problems" class="mobile-drawer-link ">
+                <span class="mobile-drawer-icon"><svg viewBox="0 0 24 24"
+     width="16"
+     height="16"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+</svg>
+</span>
+                <span>المشاكل والأعطال</span>
+            </a>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/solutions" class="mobile-drawer-link ">
+                <span class="mobile-drawer-icon"><svg viewBox="0 0 24 24"
+     width="16"
+     height="16"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+</svg>
+</span>
+                <span>الحلول والإصلاحات</span>
+            </a>
+
+            <div class="mobile-drawer-section-title">المنصة والمساعدة</div>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/about" class="mobile-drawer-link ">
+                <span class="mobile-drawer-icon"><svg viewBox="0 0 24 24"
+     width="16"
+     height="16"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+</svg>
+</span>
+                <span>حول الموقع</span>
+            </a>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/contact" class="mobile-drawer-link ">
+                <span class="mobile-drawer-icon"><svg viewBox="0 0 24 24"
+     width="16"
+     height="16"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+</svg>
+</span>
+                <span>اتصل بنا</span>
+            </a>
+        </div>
+
+        <div class="mobile-drawer-footer">
+            <a href="https://hardwarebase.code-elta6ur.com/en" class="btn btn-outline btn-sm" style="width:100%; justify-content:center; color:white; border-color:rgba(255,255,255,0.2);">
+                <svg viewBox="0 0 24 24"
+     width="14"
+     height="14"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+</svg>
+                <span>Switch to English</span>
+            </a>
+                    </div>
+    </div>
+
+    
+    <nav class="mobile-bottom-nav" id="mobile-bottom-nav" aria-label="Mobile Quick Bar">
+        <div class="mobile-bottom-nav-inner">
+            <a href="https://hardwarebase.code-elta6ur.com/ar" class="mobile-bottom-nav-item active">
+                <span class="bottom-nav-icon-wrap"><svg viewBox="0 0 24 24"
+     width="20"
+     height="20"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+</svg>
+</span>
+                <span>الرئيسية</span>
+            </a>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/devices" class="mobile-bottom-nav-item ">
+                <span class="bottom-nav-icon-wrap"><svg viewBox="0 0 24 24"
+     width="20"
+     height="20"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+</span>
+                <span>الأجهزة</span>
+            </a>
+            <button type="button" class="mobile-bottom-nav-item" id="bottom-search-trigger" aria-label="Search">
+                <span class="bottom-nav-icon-wrap"><svg viewBox="0 0 24 24"
+     width="20"
+     height="20"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+</svg>
+</span>
+                <span>بحث</span>
+            </button>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/ics" class="mobile-bottom-nav-item ">
+                <span class="bottom-nav-icon-wrap"><svg viewBox="0 0 24 24"
+     width="20"
+     height="20"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
+</svg>
+</span>
+                <span>الدوائر المتكاملة (IC)</span>
+            </a>
+            <button type="button" class="mobile-bottom-nav-item" id="bottom-menu-trigger" aria-label="Menu">
+                <span class="bottom-nav-icon-wrap"><svg viewBox="0 0 24 24"
+     width="20"
+     height="20"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
+</svg>
+</span>
+                <span>المزيد</span>
+            </button>
+        </div>
+    </nav>
+
+    
+    <div class="mobile-search-modal" id="mobile-search-modal">
+        <div class="mobile-search-header">
+            <div class="mobile-search-input-wrap">
+                <input type="text" id="mobile-search-input" placeholder="ابحث عن جهاز، IC، موصّل، رقم قطعة أو مشكلة..." autocomplete="off">
+            </div>
+            <button type="button" class="mobile-search-close" id="mobile-search-close">إلغاء</button>
+        </div>
+        <div class="mobile-search-body">
+            <div id="mobile-search-results"></div>
+        </div>
+    </div>
+
+    
+        
+    
+    
+    
+    
+
+<section class="hero">
+    <div class="container hero-content">
+        <h1>هاردوير بيس</h1>
+        <p>قاعدة المعرفة الشاملة للهاردوير والصيانة</p>
+
+        <form action="https://hardwarebase.code-elta6ur.com/ar/search" method="GET" class="search-box">
+            <input type="text"
+                   name="q"
+                   id="global-search-input"
+                   placeholder="ابحث عن جهاز، IC، موصّل، رقم قطعة أو مشكلة..."
+                   autocomplete="off">
+            <button type="submit" aria-label="Search">
+                <svg viewBox="0 0 24 24"
+     width="20"
+     height="20"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+</svg>
+            </button>
+            <div class="autocomplete-dropdown" id="autocomplete-dropdown"></div>
+        </form>
+    </div>
+</section>
+
+
+<section class="section" style="padding-top: 2rem; padding-bottom: 2rem; background: var(--bg-card); border-bottom: 1px solid var(--border);">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+            <div style="font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent);">
+                بيانات حية مباشرة من قاعدة المعرفة
+            </div>
+            <h2 style="font-size: 1.5rem; font-weight: 800; margin: 0.25rem 0 0;">
+                إحصائيات المنصة الحقيقية
+            </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; text-align: center;">
+            <div class="card" style="padding: 1rem 0.75rem;">
+                <div style="color: var(--accent); margin-bottom: 0.25rem;"><svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+</div>
+                <div style="font-size: 1.5rem; font-weight: 800;">21</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">الأجهزة</div>
+            </div>
+            <div class="card" style="padding: 1rem 0.75rem;">
+                <div style="color: var(--accent); margin-bottom: 0.25rem;"><svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/>
+</svg>
+</div>
+                <div style="font-size: 1.5rem; font-weight: 800;">7</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">العلامات التجارية</div>
+            </div>
+            <div class="card" style="padding: 1rem 0.75rem;">
+                <div style="color: var(--accent); margin-bottom: 0.25rem;"><svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+</svg>
+</div>
+                <div style="font-size: 1.5rem; font-weight: 800;">15</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">الشاشات</div>
+            </div>
+            <div class="card" style="padding: 1rem 0.75rem;">
+                <div style="color: var(--accent); margin-bottom: 0.25rem;"><svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="10" x2="23" y2="14"/>
+</svg>
+</div>
+                <div style="font-size: 1.5rem; font-weight: 800;">11</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">البطاريات</div>
+            </div>
+            <div class="card" style="padding: 1rem 0.75rem;">
+                <div style="color: var(--accent); margin-bottom: 0.25rem;"><svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
+</svg>
+</div>
+                <div style="font-size: 1.5rem; font-weight: 800;">19</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">الدوائر المتكاملة (IC)</div>
+            </div>
+            <div class="card" style="padding: 1rem 0.75rem;">
+                <div style="color: var(--accent); margin-bottom: 0.25rem;"><svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <path d="M12 2v6m0 0l-3 3m3-3l3 3M7 11h10v7a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3v-7zm2 10v3m6-3v3"/>
+</svg>
+</div>
+                <div style="font-size: 1.5rem; font-weight: 800;">6</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">الموصّلات</div>
+            </div>
+            <div class="card" style="padding: 1rem 0.75rem;">
+                <div style="color: var(--accent); margin-bottom: 0.25rem;"><svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="2" y="2" width="20" height="20" rx="3"/><path d="M6 6h4v4H6zm8 0h4v4h-4zm0 8h4v4h-4zM6 14h4v4H6z"/><path d="M10 8h4m-4 8h4m-6-4v2m8-2v2"/>
+</svg>
+</div>
+                <div style="font-size: 1.5rem; font-weight: 800;">16</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">اللوحات الإلكترونية</div>
+            </div>
+            <div class="card" style="padding: 1rem 0.75rem;">
+                <div style="color: var(--accent); margin-bottom: 0.25rem;"><svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+</svg>
+</div>
+                <div style="font-size: 1.5rem; font-weight: 800;">6</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">المشاكل والأعطال</div>
+            </div>
+            <div class="card" style="padding: 1rem 0.75rem;">
+                <div style="color: var(--accent); margin-bottom: 0.25rem;"><svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+</svg>
+</div>
+                <div style="font-size: 1.5rem; font-weight: 800;">5</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">الحلول والإصلاحات</div>
+            </div>
+            <div class="card" style="padding: 1rem 0.75rem;">
+                <div style="color: var(--accent); margin-bottom: 0.25rem;"><svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+</svg>
+</div>
+                <div style="font-size: 1.5rem; font-weight: 800;">62</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">التوافق</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">تصفح حسب العلامة التجارية</h2>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/devices" class="section-link">
+                عرض الكل <svg viewBox="0 0 24 24"
+     width="14"
+     height="14"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+</svg>
+            </a>
+        </div>
+
+        <div class="grid-6">
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/brand/samsung" class="card brand-card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div class="brand-card-logo" style="height: 48px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                    
+                </div>
+                <div class="brand-card-name" style="font-weight: 700; font-size: 0.9375rem;">سامسونج</div>
+                <div class="brand-card-count" style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
+                    7 الأجهزة
+                </div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/brand/apple" class="card brand-card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div class="brand-card-logo" style="height: 48px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                    
+                </div>
+                <div class="brand-card-name" style="font-weight: 700; font-size: 0.9375rem;">آبل</div>
+                <div class="brand-card-count" style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
+                    7 الأجهزة
+                </div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/brand/xiaomi" class="card brand-card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div class="brand-card-logo" style="height: 48px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                    
+                </div>
+                <div class="brand-card-name" style="font-weight: 700; font-size: 0.9375rem;">شاومي</div>
+                <div class="brand-card-count" style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
+                    2 الأجهزة
+                </div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/brand/redmi" class="card brand-card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div class="brand-card-logo" style="height: 48px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                    
+                </div>
+                <div class="brand-card-name" style="font-weight: 700; font-size: 0.9375rem;">ريدمي</div>
+                <div class="brand-card-count" style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
+                    2 الأجهزة
+                </div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/brand/poco" class="card brand-card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div class="brand-card-logo" style="height: 48px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                    
+                </div>
+                <div class="brand-card-name" style="font-weight: 700; font-size: 0.9375rem;">بوكو</div>
+                <div class="brand-card-count" style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
+                    1 الأجهزة
+                </div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/brand/valve" class="card brand-card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div class="brand-card-logo" style="height: 48px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                    
+                </div>
+                <div class="brand-card-name" style="font-weight: 700; font-size: 0.9375rem;">فالف</div>
+                <div class="brand-card-count" style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
+                    1 الأجهزة
+                </div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/brand/nintendo" class="card brand-card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div class="brand-card-logo" style="height: 48px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                    
+                </div>
+                <div class="brand-card-name" style="font-weight: 700; font-size: 0.9375rem;">نينتندو</div>
+                <div class="brand-card-count" style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
+                    1 الأجهزة
+                </div>
+            </a>
+                    </div>
+    </div>
+</section>
+
+
+<section class="section" style="background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">أجهزة شائعة</h2>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/devices" class="section-link">
+                عرض الكل <svg viewBox="0 0 24 24"
+     width="14"
+     height="14"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+</svg>
+            </a>
+        </div>
+
+        <div class="grid-3">
+                        <a href="/ar/device/samsung/galaxy-s23-ultra" class="card device-card" style="text-decoration:none; color:inherit; display:flex; gap:1rem; align-items:center;">
+                <div class="device-card-img" style="width:48px; height:48px; background:var(--bg-hover); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                            <svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+                                    </div>
+                <div style="flex:1; min-width:0;">
+                    <div class="card-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">جالاكسي اس 23 الترا</div>
+                    <div class="card-subtitle">سامسونج</div>
+                    <div class="card-meta" style="display:flex; gap:0.5rem; font-size:0.75rem; margin-top:0.25rem;">
+                                                <span>SM-S918B</span>
+                                                                        <span>· Qualcomm SM8550-AC Snapdragon 8 Gen 2 (4 nm)</span>
+                                            </div>
+                </div>
+            </a>
+                        <a href="/ar/device/samsung/galaxy-a52" class="card device-card" style="text-decoration:none; color:inherit; display:flex; gap:1rem; align-items:center;">
+                <div class="device-card-img" style="width:48px; height:48px; background:var(--bg-hover); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                            <svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+                                    </div>
+                <div style="flex:1; min-width:0;">
+                    <div class="card-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">جالاكسي ايه 52</div>
+                    <div class="card-subtitle">سامسونج</div>
+                    <div class="card-meta" style="display:flex; gap:0.5rem; font-size:0.75rem; margin-top:0.25rem;">
+                                                <span>SM-A525F</span>
+                                                                        <span>· Qualcomm SM7125 Snapdragon 720G (8 nm)</span>
+                                            </div>
+                </div>
+            </a>
+                        <a href="/ar/device/apple/iphone-14-pro-max" class="card device-card" style="text-decoration:none; color:inherit; display:flex; gap:1rem; align-items:center;">
+                <div class="device-card-img" style="width:48px; height:48px; background:var(--bg-hover); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                            <svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+                                    </div>
+                <div style="flex:1; min-width:0;">
+                    <div class="card-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">آيفون 14 برو ماكس</div>
+                    <div class="card-subtitle">آبل</div>
+                    <div class="card-meta" style="display:flex; gap:0.5rem; font-size:0.75rem; margin-top:0.25rem;">
+                                                <span>A2894</span>
+                                                                        <span>· Apple A16 Bionic (4 nm)</span>
+                                            </div>
+                </div>
+            </a>
+                        <a href="/ar/device/apple/iphone-13" class="card device-card" style="text-decoration:none; color:inherit; display:flex; gap:1rem; align-items:center;">
+                <div class="device-card-img" style="width:48px; height:48px; background:var(--bg-hover); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                            <svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+                                    </div>
+                <div style="flex:1; min-width:0;">
+                    <div class="card-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">آيفون 13</div>
+                    <div class="card-subtitle">آبل</div>
+                    <div class="card-meta" style="display:flex; gap:0.5rem; font-size:0.75rem; margin-top:0.25rem;">
+                                                <span>A2633</span>
+                                                                        <span>· Apple A15 Bionic (5 nm)</span>
+                                            </div>
+                </div>
+            </a>
+                        <a href="/ar/device/xiaomi/poco-x3-pro" class="card device-card" style="text-decoration:none; color:inherit; display:flex; gap:1rem; align-items:center;">
+                <div class="device-card-img" style="width:48px; height:48px; background:var(--bg-hover); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                            <svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+                                    </div>
+                <div style="flex:1; min-width:0;">
+                    <div class="card-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">بوكو اكس 3 برو</div>
+                    <div class="card-subtitle">شاومي</div>
+                    <div class="card-meta" style="display:flex; gap:0.5rem; font-size:0.75rem; margin-top:0.25rem;">
+                                                <span>M2102J20SG</span>
+                                                                        <span>· Qualcomm Snapdragon 860 (7 nm)</span>
+                                            </div>
+                </div>
+            </a>
+                        <a href="/ar/device/xiaomi/redmi-note-11" class="card device-card" style="text-decoration:none; color:inherit; display:flex; gap:1rem; align-items:center;">
+                <div class="device-card-img" style="width:48px; height:48px; background:var(--bg-hover); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                            <svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+                                    </div>
+                <div style="flex:1; min-width:0;">
+                    <div class="card-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">ريدمي نوت 11</div>
+                    <div class="card-subtitle">شاومي</div>
+                    <div class="card-meta" style="display:flex; gap:0.5rem; font-size:0.75rem; margin-top:0.25rem;">
+                                                <span>2201117TG</span>
+                                                                        <span>· Qualcomm SM6225 Snapdragon 680 4G (6 nm)</span>
+                                            </div>
+                </div>
+            </a>
+                        <a href="/ar/device/samsung/galaxy-s24-ultra-sm-s928b" class="card device-card" style="text-decoration:none; color:inherit; display:flex; gap:1rem; align-items:center;">
+                <div class="device-card-img" style="width:48px; height:48px; background:var(--bg-hover); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                            <svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+                                    </div>
+                <div style="flex:1; min-width:0;">
+                    <div class="card-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">سامسونج جالاكسي S24 ألترا</div>
+                    <div class="card-subtitle">سامسونج</div>
+                    <div class="card-meta" style="display:flex; gap:0.5rem; font-size:0.75rem; margin-top:0.25rem;">
+                                                <span>SM-S928B</span>
+                                                                        <span>· Qualcomm Snapdragon 8 Gen 3 for Galaxy</span>
+                                            </div>
+                </div>
+            </a>
+                        <a href="/ar/device/samsung/galaxy-s22-ultra-sm-s908b" class="card device-card" style="text-decoration:none; color:inherit; display:flex; gap:1rem; align-items:center;">
+                <div class="device-card-img" style="width:48px; height:48px; background:var(--bg-hover); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                            <svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+                                    </div>
+                <div style="flex:1; min-width:0;">
+                    <div class="card-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">سامسونج جالاكسي S22 ألترا</div>
+                    <div class="card-subtitle">سامسونج</div>
+                    <div class="card-meta" style="display:flex; gap:0.5rem; font-size:0.75rem; margin-top:0.25rem;">
+                                                <span>SM-S908B</span>
+                                                                        <span>· Exynos 2200 / Qualcomm Snapdragon 8 Gen 1</span>
+                                            </div>
+                </div>
+            </a>
+                        <a href="/ar/device/samsung/galaxy-a54-5g-sm-a546b" class="card device-card" style="text-decoration:none; color:inherit; display:flex; gap:1rem; align-items:center;">
+                <div class="device-card-img" style="width:48px; height:48px; background:var(--bg-hover); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                            <svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+                                    </div>
+                <div style="flex:1; min-width:0;">
+                    <div class="card-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">سامسونج جالاكسي A54 الجيل الخامس</div>
+                    <div class="card-subtitle">سامسونج</div>
+                    <div class="card-meta" style="display:flex; gap:0.5rem; font-size:0.75rem; margin-top:0.25rem;">
+                                                <span>SM-A546B</span>
+                                                                        <span>· Exynos 1380 (5 nm)</span>
+                                            </div>
+                </div>
+            </a>
+                        <a href="/ar/device/samsung/galaxy-a53-5g-sm-a536b" class="card device-card" style="text-decoration:none; color:inherit; display:flex; gap:1rem; align-items:center;">
+                <div class="device-card-img" style="width:48px; height:48px; background:var(--bg-hover); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                            <svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+                                    </div>
+                <div style="flex:1; min-width:0;">
+                    <div class="card-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">سامسونج جالاكسي A53 الجيل الخامس</div>
+                    <div class="card-subtitle">سامسونج</div>
+                    <div class="card-meta" style="display:flex; gap:0.5rem; font-size:0.75rem; margin-top:0.25rem;">
+                                                <span>SM-A536B</span>
+                                                                        <span>· Exynos 1280 (5 nm)</span>
+                                            </div>
+                </div>
+            </a>
+                        <a href="/ar/device/samsung/galaxy-a52-5g-sm-a526b" class="card device-card" style="text-decoration:none; color:inherit; display:flex; gap:1rem; align-items:center;">
+                <div class="device-card-img" style="width:48px; height:48px; background:var(--bg-hover); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                            <svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+                                    </div>
+                <div style="flex:1; min-width:0;">
+                    <div class="card-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">سامسونج جالاكسي A52 الجيل الخامس</div>
+                    <div class="card-subtitle">سامسونج</div>
+                    <div class="card-meta" style="display:flex; gap:0.5rem; font-size:0.75rem; margin-top:0.25rem;">
+                                                <span>SM-A526B</span>
+                                                                        <span>· Qualcomm Snapdragon 750G 5G (8 nm)</span>
+                                            </div>
+                </div>
+            </a>
+                        <a href="/ar/device/apple/iphone-15-pro-max-a3106" class="card device-card" style="text-decoration:none; color:inherit; display:flex; gap:1rem; align-items:center;">
+                <div class="device-card-img" style="width:48px; height:48px; background:var(--bg-hover); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                            <svg viewBox="0 0 24 24"
+     width="24"
+     height="24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+                                    </div>
+                <div style="flex:1; min-width:0;">
+                    <div class="card-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">أبل أيفون 15 برو ماكس</div>
+                    <div class="card-subtitle">آبل</div>
+                    <div class="card-meta" style="display:flex; gap:0.5rem; font-size:0.75rem; margin-top:0.25rem;">
+                                                <span>A3106</span>
+                                                                        <span>· Apple A17 Pro (3 nm)</span>
+                                            </div>
+                </div>
+            </a>
+                    </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">دوائر متكاملة شائعة</h2>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/ics" class="section-link">
+                عرض الكل <svg viewBox="0 0 24 24"
+     width="14"
+     height="14"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+</svg>
+            </a>
+        </div>
+
+        <div class="grid-4">
+                        <a href="/ar/ic/pm7250b-qualcomm-pm7250b-secondary-pmic-charger" class="card" style="text-decoration:none; color:inherit;">
+                <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
+                    <span style="color:var(--accent);"><svg viewBox="0 0 24 24"
+     width="20"
+     height="20"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
+</svg>
+</span>
+                    <span class="card-title" style="margin:0;">آيسي باور ثانوي وشحن كوالكوم PM7250B</span>
+                </div>
+                <div class="card-subtitle" style="font-size:0.8125rem;">
+                     Qualcomm ·                      <code>PM7250B</code>                 </div>
+                <div class="card-meta" style="margin-top:0.5rem; font-size:0.75rem; color:var(--text-muted);">
+                    <span>2 الأجهزة</span>
+                </div>
+            </a>
+                        <a href="/ar/ic/1612a1-apple-1612a1-hydra-usb-charging-logic-controller" class="card" style="text-decoration:none; color:inherit;">
+                <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
+                    <span style="color:var(--accent);"><svg viewBox="0 0 24 24"
+     width="20"
+     height="20"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
+</svg>
+</span>
+                    <span class="card-title" style="margin:0;">آيسي الشحن والاتصال هايدرا 1612A1 لأجهزة آبل</span>
+                </div>
+                <div class="card-subtitle" style="font-size:0.8125rem;">
+                     NXP / Apple ·                      <code>1612A1</code>                 </div>
+                <div class="card-meta" style="margin-top:0.5rem; font-size:0.75rem; color:var(--text-muted);">
+                    <span>2 الأجهزة</span>
+                </div>
+            </a>
+                        <a href="/ar/ic/ic-pm8550" class="card" style="text-decoration:none; color:inherit;">
+                <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
+                    <span style="color:var(--accent);"><svg viewBox="0 0 24 24"
+     width="20"
+     height="20"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
+</svg>
+</span>
+                    <span class="card-title" style="margin:0;">آيسي الباور الرئيسي كوالكوم PM8550 لمعالجات سنابدراجون 8 الجيل الثاني والثالث</span>
+                </div>
+                <div class="card-subtitle" style="font-size:0.8125rem;">
+                     Qualcomm ·                      <code>PM8550</code>                 </div>
+                <div class="card-meta" style="margin-top:0.5rem; font-size:0.75rem; color:var(--text-muted);">
+                    <span>2 الأجهزة</span>
+                </div>
+            </a>
+                        <a href="/ar/ic/pm8350-qualcomm-pm8350-power-management-ic" class="card" style="text-decoration:none; color:inherit;">
+                <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
+                    <span style="color:var(--accent);"><svg viewBox="0 0 24 24"
+     width="20"
+     height="20"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
+</svg>
+</span>
+                    <span class="card-title" style="margin:0;">آيسي الباور الرئيسي كوالكوم PM8350</span>
+                </div>
+                <div class="card-subtitle" style="font-size:0.8125rem;">
+                     Qualcomm ·                      <code>PM8350</code>                 </div>
+                <div class="card-meta" style="margin-top:0.5rem; font-size:0.75rem; color:var(--text-muted);">
+                    <span>1 الأجهزة</span>
+                </div>
+            </a>
+                        <a href="/ar/ic/sm5714-silicon-mitus-sm5714-fast-switching-charger-ic" class="card" style="text-decoration:none; color:inherit;">
+                <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
+                    <span style="color:var(--accent);"><svg viewBox="0 0 24 24"
+     width="20"
+     height="20"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
+</svg>
+</span>
+                    <span class="card-title" style="margin:0;">آيسي شحن سريع سيليكون ميتوس SM5714</span>
+                </div>
+                <div class="card-subtitle" style="font-size:0.8125rem;">
+                     Silicon Mitus ·                      <code>SM5714</code>                 </div>
+                <div class="card-meta" style="margin-top:0.5rem; font-size:0.75rem; color:var(--text-muted);">
+                    <span>1 الأجهزة</span>
+                </div>
+            </a>
+                        <a href="/ar/ic/bq25890-texas-instruments-bq25890-single-cell-5a-fast-charger" class="card" style="text-decoration:none; color:inherit;">
+                <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
+                    <span style="color:var(--accent);"><svg viewBox="0 0 24 24"
+     width="20"
+     height="20"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
+</svg>
+</span>
+                    <span class="card-title" style="margin:0;">آيسي شحن سريع تكساس إنسترومنتس BQ25890</span>
+                </div>
+                <div class="card-subtitle" style="font-size:0.8125rem;">
+                     Texas Instruments ·                      <code>BQ25890</code>                 </div>
+                <div class="card-meta" style="margin-top:0.5rem; font-size:0.75rem; color:var(--text-muted);">
+                    <span>1 الأجهزة</span>
+                </div>
+            </a>
+                        <a href="/ar/ic/wcd9385-qualcomm-wcd9385-high-definition-audio-codec" class="card" style="text-decoration:none; color:inherit;">
+                <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
+                    <span style="color:var(--accent);"><svg viewBox="0 0 24 24"
+     width="20"
+     height="20"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
+</svg>
+</span>
+                    <span class="card-title" style="margin:0;">آيسي الصوت عالي الدقة كوالكوم WCD9385</span>
+                </div>
+                <div class="card-subtitle" style="font-size:0.8125rem;">
+                     Qualcomm ·                      <code>WCD9385</code>                 </div>
+                <div class="card-meta" style="margin-top:0.5rem; font-size:0.75rem; color:var(--text-muted);">
+                    <span>1 الأجهزة</span>
+                </div>
+            </a>
+                        <a href="/ar/ic/pm8150b-qualcomm-pm8150b-secondary-pmic-quick-charge" class="card" style="text-decoration:none; color:inherit;">
+                <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
+                    <span style="color:var(--accent);"><svg viewBox="0 0 24 24"
+     width="20"
+     height="20"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
+</svg>
+</span>
+                    <span class="card-title" style="margin:0;">آيسي باور وشحن ثانوي كوالكوم PM8150B</span>
+                </div>
+                <div class="card-subtitle" style="font-size:0.8125rem;">
+                     Qualcomm ·                      <code>PM8150B</code>                 </div>
+                <div class="card-meta" style="margin-top:0.5rem; font-size:0.75rem; color:var(--text-muted);">
+                    <span>1 الأجهزة</span>
+                </div>
+            </a>
+                    </div>
+    </div>
+</section>
+
+
+<section class="section" style="background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">أعطال حديثة</h2>
+            <a href="https://hardwarebase.code-elta6ur.com/ar/problems" class="section-link">
+                عرض الكل <svg viewBox="0 0 24 24"
+     width="14"
+     height="14"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+</svg>
+            </a>
+        </div>
+
+        <div class="grid-4">
+                        <a href="/ar/problem/galaxy-a52-fake-charging-yellow-thermistor-warning" class="card" style="text-decoration:none; color:inherit;">
+                <div style="display:flex; align-items:flex-start; gap:0.5rem; margin-bottom:0.5rem;">
+                    <span style="color:var(--warning, #f59e0b); flex-shrink:0; margin-top:2px;">
+                        <svg viewBox="0 0 24 24"
+     width="18"
+     height="18"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+</svg>
+                    </span>
+                    <span class="card-title" style="margin:0; font-size:0.875rem;">جالاكسي A52 شحن وهمي أو ظهور مثلث أصفر وتحذير درجة حرارة البطارية</span>
+                </div>
+                                <div class="card-meta" style="margin-top:0.5rem; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="confidence-badge" style="background: #22c55e20; color: #22c55e;">
+                        موثوقية عالية جداً
+                    </span>
+                    <span style="font-size:0.75rem; color:var(--text-muted);">
+                        1 الأجهزة
+                    </span>
+                </div>
+            </a>
+                        <a href="/ar/problem/poco-x3-pro-sudden-death-cpu-ram-solder-fatigue" class="card" style="text-decoration:none; color:inherit;">
+                <div style="display:flex; align-items:flex-start; gap:0.5rem; margin-bottom:0.5rem;">
+                    <span style="color:var(--warning, #f59e0b); flex-shrink:0; margin-top:2px;">
+                        <svg viewBox="0 0 24 24"
+     width="18"
+     height="18"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+</svg>
+                    </span>
+                    <span class="card-title" style="margin:0; font-size:0.875rem;">بوكو X3 برو موت مفاجئ أو شاشة رمادية وفصل باور (انفصال نقاط لحام المعالج)</span>
+                </div>
+                                <div class="card-meta" style="margin-top:0.5rem; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="confidence-badge" style="background: #22c55e20; color: #22c55e;">
+                        موثوقية عالية جداً
+                    </span>
+                    <span style="font-size:0.75rem; color:var(--text-muted);">
+                        1 الأجهزة
+                    </span>
+                </div>
+            </a>
+                        <a href="/ar/problem/short-circuit-on-primary-power-rail-vph-pwr-pp-vdd-main-device-completely-dead" class="card" style="text-decoration:none; color:inherit;">
+                <div style="display:flex; align-items:flex-start; gap:0.5rem; margin-bottom:0.5rem;">
+                    <span style="color:var(--warning, #f59e0b); flex-shrink:0; margin-top:2px;">
+                        <svg viewBox="0 0 24 24"
+     width="18"
+     height="18"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+</svg>
+                    </span>
+                    <span class="card-title" style="margin:0; font-size:0.875rem;">شورت صريح على خط التغذية الرئيسي (VPH_PWR / PP_VDD_MAIN) - الجهاز فاصل باور نهائياً</span>
+                </div>
+                                <div class="card-subtitle" style="font-size:0.75rem;">الجهاز فاصل باور نهائياً</div>
+                                <div class="card-meta" style="margin-top:0.5rem; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="confidence-badge" style="background: #22c55e20; color: #22c55e;">
+                        موثوقية عالية جداً
+                    </span>
+                    <span style="font-size:0.75rem; color:var(--text-muted);">
+                        2 الأجهزة
+                    </span>
+                </div>
+            </a>
+                        <a href="/ar/problem/fake-charging-usb-current-draw-freezes-at-045a" class="card" style="text-decoration:none; color:inherit;">
+                <div style="display:flex; align-items:flex-start; gap:0.5rem; margin-bottom:0.5rem;">
+                    <span style="color:var(--warning, #f59e0b); flex-shrink:0; margin-top:2px;">
+                        <svg viewBox="0 0 24 24"
+     width="18"
+     height="18"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+</svg>
+                    </span>
+                    <span class="card-title" style="margin:0; font-size:0.875rem;">الشحن الوهمي / توقف سحب تيار الشاحن عند 0.45 أمبير دون زيادة نسبة البطارية</span>
+                </div>
+                                <div class="card-subtitle" style="font-size:0.75rem;">الجهاز فاصل باور نهائياً</div>
+                                <div class="card-meta" style="margin-top:0.5rem; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="confidence-badge" style="background: #22c55e20; color: #22c55e;">
+                        موثوقية عالية جداً
+                    </span>
+                    <span style="font-size:0.75rem; color:var(--text-muted);">
+                        0 الأجهزة
+                    </span>
+                </div>
+            </a>
+                        <a href="/ar/problem/poco-x3-pro-cpu-cold-solder-joint-sudden-white-screen-no-boot" class="card" style="text-decoration:none; color:inherit;">
+                <div style="display:flex; align-items:flex-start; gap:0.5rem; margin-bottom:0.5rem;">
+                    <span style="color:var(--warning, #f59e0b); flex-shrink:0; margin-top:2px;">
+                        <svg viewBox="0 0 24 24"
+     width="18"
+     height="18"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+</svg>
+                    </span>
+                    <span class="card-title" style="margin:0; font-size:0.875rem;">فصل لحام معالج بوكو X3 برو (عطل الشاشة البيضاء وموت الهاتف المفاجئ)</span>
+                </div>
+                                <div class="card-subtitle" style="font-size:0.75rem;">عدم الإقلاع</div>
+                                <div class="card-meta" style="margin-top:0.5rem; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="confidence-badge" style="background: #22c55e20; color: #22c55e;">
+                        موثوقية عالية جداً
+                    </span>
+                    <span style="font-size:0.75rem; color:var(--text-muted);">
+                        1 الأجهزة
+                    </span>
+                </div>
+            </a>
+                        <a href="/ar/problem/iphone-7-7-plus-audio-ic-pad-m1-fracture-loop-disease" class="card" style="text-decoration:none; color:inherit;">
+                <div style="display:flex; align-items:flex-start; gap:0.5rem; margin-bottom:0.5rem;">
+                    <span style="color:var(--warning, #f59e0b); flex-shrink:0; margin-top:2px;">
+                        <svg viewBox="0 0 24 24"
+     width="18"
+     height="18"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+</svg>
+                    </span>
+                    <span class="card-title" style="margin:0; font-size:0.875rem;">انفصال مسار M1 لآيسي الصوت في أيفون 7 وأيفون 7 بلس (Audio Loop Disease)</span>
+                </div>
+                                <div class="card-subtitle" style="font-size:0.75rem;">الجهاز فاصل باور نهائياً</div>
+                                <div class="card-meta" style="margin-top:0.5rem; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="confidence-badge" style="background: #22c55e20; color: #22c55e;">
+                        موثوقية عالية جداً
+                    </span>
+                    <span style="font-size:0.75rem; color:var(--text-muted);">
+                        1 الأجهزة
+                    </span>
+                </div>
+            </a>
+                    </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">تصفح حسب نوع الجهاز</h2>
+        </div>
+
+        <div class="grid-4">
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=smartphones" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">هواتف ذكية</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=feature-phones" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">هواتف تقليدية</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=tablets" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">أجهزة لوحية</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=laptops" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="20" x2="22" y2="20"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">أجهزة لابتوب</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=desktops" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">أجهزة كمبيوتر مكتبية</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=chromebooks" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <circle cx="12" cy="12" r="10"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">كروم بوك</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=smartwatches" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <circle cx="12" cy="12" r="7"/><polyline points="12 9 12 12 13.5 13.5"/><path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">ساعات ذكية</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=smart-bands" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <circle cx="12" cy="12" r="10"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">أساور ذكية</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=game-consoles" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/><rect x="2" y="6" width="20" height="12" rx="2"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">منصات ألعاب منزلية</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=handheld-consoles" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <circle cx="12" cy="12" r="10"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">منصات ألعاب محمولة</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=routers" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">راوترات وشبكات لاسلكية</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=modems" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">مودمات</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=tvs" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">شاشات تلفزيون</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=monitors" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">شاشات كمبيوتر</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=cameras" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">كاميرات رقمية</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=printers" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">طابعات</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=dvrnvr" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <circle cx="12" cy="12" r="10"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">أجهزة تسجيل كاميرات المراقبة</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=network-devices" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">أجهزة شبكات ومحولات</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=iot-devices" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">أجهزة إنترنت الأشياء والتحكم</div>
+            </a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices?type=other-electronics" class="card" style="text-decoration:none; color:inherit; text-align:center; padding:1.25rem 1rem;">
+                <div style="margin-bottom:0.5rem; color:var(--accent);">
+                    <svg viewBox="0 0 24 24"
+     width="32"
+     height="32"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="svg-icon "
+     style="display:inline-block; vertical-align:middle;">
+    <circle cx="12" cy="12" r="10"/>
+</svg>
+                </div>
+                <div class="card-title" style="font-size:0.9375rem;">إلكترونيات وأجهزة أخرى</div>
+            </a>
+                    </div>
+    </div>
+</section>
+
+
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-title">هاردوير بيس</div>
+                    <p class="footer-desc">
+                                                    هاردوير بيس هي منصة معرفية متخصصة في عالم الهاردوير والإلكترونيات والصيانة. نوفر قاعدة بيانات شاملة للأجهزة والمكونات والدوائر المتكاملة والمشاكل والحلول.
+                                            </p>
+                </div>
+                <div>
+                    <div class="footer-title">الأجهزة</div>
+                    <div class="footer-links">
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/devices">جميع الأجهزة</a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/screens">الشاشات</a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/batteries">البطاريات</a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/connectors">الموصّلات</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-title">المكونات</div>
+                    <div class="footer-links">
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/ics">الدوائر المتكاملة (IC)</a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/problems">المشاكل والأعطال</a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/solutions">الحلول والإصلاحات</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-title">حول الموقع</div>
+                    <div class="footer-links">
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/about">حول الموقع</a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/contact">اتصل بنا</a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/page/privacy-policy">سياسة الخصوصية</a>
+                        <a href="https://hardwarebase.code-elta6ur.com/ar/page/terms-of-use">شروط الاستخدام</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 هاردوير بيس. جميع الحقوق محفوظة.</div>
+                <div class="footer-disclaimer">تنبيه: المعلومات المقدمة لأغراض تعليمية ومرجعية لهواة ومحترفي الصيانة. تحقق دائماً من القياسات قبل استبدال أي مكوّن.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://hardwarebase.code-elta6ur.com/js/app.js?v=1789993965"></script>
+    </body>
+</html>
