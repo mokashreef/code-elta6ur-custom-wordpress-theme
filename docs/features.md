@@ -1,4 +1,6 @@
 # Functional Features & Subsystems — Code Elta6ur Theme
+> 🌐 **Language / اللغة:** [English](features.md) | [العربية](ar/features.md)
+
 
 This document provides a comprehensive inventory of the functional capabilities, tools, and subsystems engineered into the custom WordPress theme.
 

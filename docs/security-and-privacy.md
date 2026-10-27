@@ -1,4 +1,6 @@
 # Security & Privacy Architecture — Code Elta6ur Theme
+> 🌐 **Language / اللغة:** [English](security-and-privacy.md) | [العربية](ar/security-and-privacy.md)
+
 
 This document details the security principles, data protection safeguards, and privacy controls implemented throughout the custom WordPress theme.
 

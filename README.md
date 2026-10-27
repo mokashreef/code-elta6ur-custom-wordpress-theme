@@ -4,7 +4,8 @@
 > *Developed by Mohammad Abu Khashreef for Code Elta6ur.*  
 > **Official Platform:** [https://code-elta6ur.com/](https://code-elta6ur.com/)  
 > **Developer Profile:** [https://mohammad.code-elta6ur.com/](https://mohammad.code-elta6ur.com/)  
-> **GitHub:** [https://github.com/mokashreef](https://github.com/mokashreef)
+> **GitHub:** [https://github.com/mokashreef](https://github.com/mokashreef)  
+> 🌐 **Language / اللغة:** [English](README.md) | [العربية](README.ar.md)
 
 ---
 

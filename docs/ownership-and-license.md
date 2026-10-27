@@ -1,4 +1,6 @@
 # Intellectual Property & License Terms — Code Elta6ur Documentation
+> 🌐 **Language / اللغة:** [English](ownership-and-license.md) | [العربية](ar/ownership-and-license.md)
+
 
 This document defines the intellectual property ownership, copyright protections, and terms of use governing the contents of this repository.
 

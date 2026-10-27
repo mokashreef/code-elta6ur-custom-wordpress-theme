@@ -1,4 +1,6 @@
 # Testing Methodology & Quality Assurance — Code Elta6ur Theme
+> 🌐 **Language / اللغة:** [English](testing-and-qa.md) | [العربية](ar/testing-and-qa.md)
+
 
 This document describes the automated verification pipeline, test suites, and quality assurance procedures engineered to validate the custom WordPress theme.
 

@@ -1,4 +1,6 @@
 # Architecture Overview — Code Elta6ur WordPress Theme
+> 🌐 **Language / اللغة:** [English](architecture.md) | [العربية](ar/architecture.md)
+
 
 This document details the high-level architecture, design patterns, module separation, and component interactions of the custom WordPress theme engineered for **Code Elta6ur**.
 

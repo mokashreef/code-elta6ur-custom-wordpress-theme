@@ -1,4 +1,6 @@
 # Architectural Decision Records (ADRs) — Code Elta6ur Theme
+> 🌐 **Language / اللغة:** [English](engineering-decisions.md) | [العربية](ar/engineering-decisions.md)
+
 
 This document records the foundational architectural decisions, context, and trade-offs made during the engineering of the custom WordPress theme.
 

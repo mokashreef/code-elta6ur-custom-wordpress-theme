@@ -1,4 +1,6 @@
 # Project Scope — Code Elta6ur Documentation Repository
+> 🌐 **Language / اللغة:** [English](project-scope.md) | [العربية](ar/project-scope.md)
+
 
 This document establishes the boundaries of this repository, defining what is included, what is intentionally excluded, and the intended audience.
 
