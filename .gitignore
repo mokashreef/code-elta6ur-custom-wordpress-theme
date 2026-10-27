@@ -1,0 +1,65 @@
+# Git Ignore for Code Elta6ur Documentation Repository
+# Ensures NO theme source code, scripts, configs, or sensitive assets can ever be committed.
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.temp
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Source Code & Web Assets (Strict Exclusion)
+*.php
+*.js
+*.css
+*.scss
+*.sass
+*.less
+
+# Archives and Packages
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+*.tgz
+
+# Database & Dump Files
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+
+# Environment, Config & Secret Files
+.env
+.env.*
+*.config
+*.conf
+*.ini
+*.log
+*.key
+*.pem
+*.cert
+*.crt
+
+# WordPress Core & Theme Folders (Never tracked in docs repo)
+wp-content/
+wp-includes/
+wp-admin/
+code-elta6ur-theme/
+node_modules/
+vendor/
+
+# Temporary and Build Outputs
+build/
+dist/
+scratch/
