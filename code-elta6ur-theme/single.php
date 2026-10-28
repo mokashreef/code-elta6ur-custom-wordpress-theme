@@ -33,6 +33,20 @@ get_header();
 
 			// Related Posts Section (Transient Cached for Fast Performance & Deterministic Crawling)
 			$related_posts = function_exists( 'cdt_seo_get_related_posts' ) ? cdt_seo_get_related_posts( get_the_ID(), 3 ) : array();
+			if ( empty( $related_posts ) ) {
+				$course_cats   = function_exists( 'cdt_get_course_category_ids' ) ? cdt_get_course_category_ids() : array();
+				$related_posts = get_posts(
+					array(
+						'post_type'           => 'post',
+						'post_status'         => 'publish',
+						'category__in'        => wp_get_post_categories( get_the_ID() ),
+						'category__not_in'    => $course_cats,
+						'post__not_in'        => array( get_the_ID() ),
+						'posts_per_page'      => 3,
+						'ignore_sticky_posts' => 1,
+					)
+				);
+			}
 			if ( ! empty( $related_posts ) ) :
 				?>
 				<div class="cdt-related-posts" style="margin-block-start: var(--space-12, 3rem); padding-block-start: var(--space-8, 2rem); border-block-start: 1px solid var(--brand-border, #E2E8F0);">

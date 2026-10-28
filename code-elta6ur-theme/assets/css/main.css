@@ -2595,3 +2595,79 @@ code:not(pre code) {
   margin-block-start: auto;
 }
 
+/* --------------------------------------------------------------------------
+   AI Dynamic Subcategories Navigation & Filter Tabs
+   -------------------------------------------------------------------------- */
+.cdt-ai-subnav {
+  margin-block-start: var(--space-6, 1.5rem);
+  width: 100%;
+}
+
+.cdt-ai-subnav-list {
+  display: flex;
+  gap: var(--space-3, 0.75rem);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cdt-ai-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF !important;
+  padding: 8px 18px;
+  border-radius: var(--radius-full, 9999px);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast, 150ms ease-in-out);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(6px);
+}
+
+.cdt-ai-pill:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.38);
+}
+
+.cdt-ai-pill.is-active {
+  background: #FFFFFF !important;
+  color: var(--brand-primary, #0170B9) !important;
+  font-weight: 700;
+  border-color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.cdt-ai-pill.is-static {
+  cursor: default;
+}
+
+.cdt-ai-pill.is-static:hover {
+  transform: none;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.cdt-ai-pill-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding-inline: 6px;
+  border-radius: var(--radius-full, 9999px);
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.cdt-ai-pill.is-active .cdt-ai-pill-count {
+  background: rgba(1, 112, 185, 0.12);
+  color: var(--brand-primary, #0170B9);
+}
+

@@ -31,20 +31,23 @@ if ( ! defined( 'CDT_THEME_URI' ) ) {
 
 // Global category mock database
 $mock_categories = array(
-	9   => (object) array( 'term_id' => 9, 'name' => 'الذكاء الاصطناعي', 'slug' => 'الذكاء-الاصطناعي', 'count' => 18 ),
-	8   => (object) array( 'term_id' => 8, 'name' => 'تعلم البرمجة', 'slug' => 'تعلم-البرمجة', 'count' => 48 ),
-	6   => (object) array( 'term_id' => 6, 'name' => 'البرمجة', 'slug' => 'البرمجة', 'count' => 30 ),
-	5   => (object) array( 'term_id' => 5, 'name' => 'تطوير المواقع', 'slug' => 'تطوير-المواقع', 'count' => 33 ),
-	10  => (object) array( 'term_id' => 10, 'name' => 'التقنية', 'slug' => 'التقنية', 'count' => 27 ),
-	7   => (object) array( 'term_id' => 7, 'name' => 'العمل في البرمجة', 'slug' => 'العمل-في-البرمجة', 'count' => 33 ),
-	11  => (object) array( 'term_id' => 11, 'name' => 'لغات البرمجة', 'slug' => 'لغات-البرمجة', 'count' => 20 ),
-	53  => (object) array( 'term_id' => 53, 'name' => 'HTML', 'slug' => 'html', 'count' => 17 ),
-	62  => (object) array( 'term_id' => 62, 'name' => 'css', 'slug' => 'css', 'count' => 37 ),
-	71  => (object) array( 'term_id' => 71, 'name' => 'Bootstrap', 'slug' => 'bootstrap', 'count' => 25 ),
-	74  => (object) array( 'term_id' => 74, 'name' => 'JavaScript', 'slug' => 'javascript', 'count' => 32 ),
-	76  => (object) array( 'term_id' => 76, 'name' => 'React', 'slug' => 'react', 'count' => 32 ),
-	80  => (object) array( 'term_id' => 80, 'name' => 'C++', 'slug' => 'c', 'count' => 31 ),
-	119 => (object) array( 'term_id' => 119, 'name' => 'كورس typescript', 'slug' => 'typescript', 'count' => 13 ),
+	9   => (object) array( 'term_id' => 9, 'name' => 'الذكاء الاصطناعي', 'slug' => 'الذكاء-الاصطناعي', 'count' => 18, 'parent' => 0 ),
+	8   => (object) array( 'term_id' => 8, 'name' => 'تعلم البرمجة', 'slug' => 'تعلم-البرمجة', 'count' => 48, 'parent' => 0 ),
+	6   => (object) array( 'term_id' => 6, 'name' => 'البرمجة', 'slug' => 'البرمجة', 'count' => 30, 'parent' => 0 ),
+	5   => (object) array( 'term_id' => 5, 'name' => 'تطوير المواقع', 'slug' => 'تطوير-المواقع', 'count' => 33, 'parent' => 0 ),
+	10  => (object) array( 'term_id' => 10, 'name' => 'التقنية', 'slug' => 'التقنية', 'count' => 27, 'parent' => 0 ),
+	7   => (object) array( 'term_id' => 7, 'name' => 'العمل في البرمجة', 'slug' => 'العمل-في-البرمجة', 'count' => 33, 'parent' => 0 ),
+	11  => (object) array( 'term_id' => 11, 'name' => 'لغات البرمجة', 'slug' => 'لغات-البرمجة', 'count' => 20, 'parent' => 0 ),
+	53  => (object) array( 'term_id' => 53, 'name' => 'HTML', 'slug' => 'html', 'count' => 17, 'parent' => 0 ),
+	62  => (object) array( 'term_id' => 62, 'name' => 'css', 'slug' => 'css', 'count' => 37, 'parent' => 0 ),
+	71  => (object) array( 'term_id' => 71, 'name' => 'Bootstrap', 'slug' => 'bootstrap', 'count' => 25, 'parent' => 0 ),
+	74  => (object) array( 'term_id' => 74, 'name' => 'JavaScript', 'slug' => 'javascript', 'count' => 32, 'parent' => 0 ),
+	76  => (object) array( 'term_id' => 76, 'name' => 'React', 'slug' => 'react', 'count' => 32, 'parent' => 0 ),
+	80  => (object) array( 'term_id' => 80, 'name' => 'C++', 'slug' => 'c', 'count' => 31, 'parent' => 0 ),
+	119 => (object) array( 'term_id' => 119, 'name' => 'كورس typescript', 'slug' => 'typescript', 'count' => 13, 'parent' => 0 ),
+	// Child categories under AI (parent: 9)
+	201 => (object) array( 'term_id' => 201, 'name' => 'أدوات الذكاء الاصطناعي', 'slug' => 'ai-tools', 'count' => 8, 'parent' => 9 ),
+	202 => (object) array( 'term_id' => 202, 'name' => 'شات جي بي تي', 'slug' => 'chatgpt', 'count' => 6, 'parent' => 9 ),
 );
 
 $mock_post_categories = array(
@@ -60,6 +63,10 @@ $mock_post_categories = array(
 	527  => array( 53 ),
 	// JavaScript course lesson
 	1214 => array( 74 ),
+	// Post in AI Child Category (Tools)
+	4001 => array( 201 ),
+	// Post in AI Parent + AI Child Category (ChatGPT)
+	4002 => array( 9, 202 ),
 );
 
 if ( ! function_exists( 'get_the_category' ) ) {
@@ -88,6 +95,47 @@ if ( ! function_exists( 'get_category_by_slug' ) ) {
 			if ( $cat->slug === $slug || urldecode( $cat->slug ) === $slug ) {
 				return $cat;
 			}
+		}
+		return false;
+	}
+}
+
+if ( ! function_exists( 'get_category' ) ) {
+	function get_category( $category ) {
+		global $mock_categories;
+		$id = is_object( $category ) ? $category->term_id : (int) $category;
+		return isset( $mock_categories[ $id ] ) ? $mock_categories[ $id ] : false;
+	}
+}
+
+if ( ! function_exists( 'get_terms' ) ) {
+	function get_terms( $args = array() ) {
+		global $mock_categories;
+		$results = array();
+		$parent  = isset( $args['parent'] ) ? (int) $args['parent'] : null;
+
+		foreach ( $mock_categories as $cat ) {
+			if ( null !== $parent ) {
+				$cat_parent = isset( $cat->parent ) ? (int) $cat->parent : 0;
+				if ( $cat_parent !== $parent ) {
+					continue;
+				}
+			}
+			$results[] = $cat;
+		}
+		return $results;
+	}
+}
+
+if ( ! function_exists( 'cat_is_ancestor_of' ) ) {
+	function cat_is_ancestor_of( $cat1, $cat2 ) {
+		global $mock_categories;
+		$cat1_id = is_object( $cat1 ) ? $cat1->term_id : (int) $cat1;
+		$cat2_id = is_object( $cat2 ) ? $cat2->term_id : (int) $cat2;
+
+		if ( isset( $mock_categories[ $cat2_id ] ) ) {
+			$parent = isset( $mock_categories[ $cat2_id ]->parent ) ? (int) $mock_categories[ $cat2_id ]->parent : 0;
+			return ( $parent === $cat1_id );
 		}
 		return false;
 	}
@@ -206,6 +254,14 @@ $theme_dir = __DIR__ . '/../code-elta6ur-theme';
 assertCondition( file_exists( $theme_dir . '/category-9.php' ), "Standard ASCII category-9.php template exists" );
 assertCondition( file_exists( $theme_dir . '/template-ai.php' ), "Dedicated page template template-ai.php exists" );
 
+// Verification of AI child categories dynamic engine
+$ai_children = cdt_get_ai_child_categories( false );
+assertCondition( is_array( $ai_children ) && count( $ai_children ) === 2, "AI dynamic child categories successfully retrieved (Actual count: " . count( $ai_children ) . ")" );
+assertCondition( cdt_is_ai_category_or_child( 9 ) === true, "Cat 9 is recognized as AI parent" );
+assertCondition( cdt_is_ai_category_or_child( 201 ) === true, "Cat 201 (AI Tools) is recognized as child of AI" );
+assertCondition( cdt_is_ai_category_or_child( 202 ) === true, "Cat 202 (ChatGPT) is recognized as child of AI" );
+assertCondition( cdt_is_ai_category_or_child( 6 ) === false, "Cat 6 (General Programming) is NOT recognized as child of AI" );
+
 echo "\n==================================================\n";
 echo "3. VERIFYING AI CATEGORY MASKING ON CARDS & VIEWS\n";
 echo "==================================================\n";
@@ -225,6 +281,14 @@ assertCondition( $display_cat_3319 !== null && $display_cat_3319->term_id === 6,
 // Case D: General Web Dev post (Post 1001)
 $display_cat_1001 = cdt_get_display_category( 1001 );
 assertCondition( $display_cat_1001 !== null && $display_cat_1001->term_id === 5, "General post displays its own category: " . ( $display_cat_1001 ? $display_cat_1001->name : '' ) );
+
+// Case E: Post in AI Child Category (Tools - Post 4001)
+$display_cat_4001 = cdt_get_display_category( 4001 );
+assertCondition( $display_cat_4001 !== null && $display_cat_4001->term_id === 201, "Post in AI child category displays child category badge: " . ( $display_cat_4001 ? $display_cat_4001->name : '' ) );
+
+// Case F: Post in AI Parent + AI Child Category (ChatGPT - Post 4002)
+$display_cat_4002 = cdt_get_display_category( 4002 );
+assertCondition( $display_cat_4002 !== null && $display_cat_4002->term_id === 202, "Post in AI parent + child displays specific child badge: " . ( $display_cat_4002 ? $display_cat_4002->name : '' ) );
 
 echo "\n==================================================\n";
 echo "4. VERIFYING CODE FILES & INTEGRATION ACCURACY\n";
@@ -264,6 +328,16 @@ assertCondition( strpos( $mobile_nav, 'الذكاء الاصطناعي' ) !== fa
 
 $footer_widgets = file_get_contents( $theme_dir . '/template-parts/footer/footer-widgets.php' );
 assertCondition( strpos( $footer_widgets, 'قسم الذكاء الاصطناعي' ) !== false, "footer-widgets.php contains AI section link" );
+
+$cat9_content = file_get_contents( $theme_dir . '/category-9.php' );
+assertCondition( strpos( $cat9_content, 'cdt_get_ai_child_categories' ) !== false, "category-9.php queries dynamic AI child categories" );
+assertCondition( strpos( $cat9_content, 'cdt-ai-subnav' ) !== false, "category-9.php renders dynamic AI subcategories navigation" );
+
+$tmpl_ai_content = file_get_contents( $theme_dir . '/template-ai.php' );
+assertCondition( strpos( $tmpl_ai_content, 'cdt_get_ai_child_categories' ) !== false, "template-ai.php queries dynamic AI child categories" );
+assertCondition( strpos( $tmpl_ai_content, 'cdt-ai-subnav' ) !== false, "template-ai.php renders dynamic AI subcategories navigation" );
+
+assertCondition( strpos( $setup, 'cdt_is_ai_category_or_child' ) !== false, "theme-setup.php routes child categories of AI to AI template" );
 
 echo "\n==================================================\n";
 echo "SUMMARY RESULTS\n";

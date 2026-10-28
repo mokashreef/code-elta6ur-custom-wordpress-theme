@@ -300,6 +300,80 @@ function cdt_get_ai_category_id() {
 }
 
 /**
+ * Retrieves all direct child categories of the AI parent category.
+ *
+ * @param bool $hide_empty Whether to hide categories without posts. Default false so newly created subcategories appear immediately.
+ * @return WP_Term[] Array of child category terms.
+ */
+function cdt_get_ai_child_categories( $hide_empty = false ) {
+	$ai_id = cdt_get_ai_category_id();
+	if ( ! $ai_id ) {
+		return array();
+	}
+
+	$children = get_terms(
+		array(
+			'taxonomy'   => 'category',
+			'parent'     => $ai_id,
+			'hide_empty' => (bool) $hide_empty,
+			'orderby'    => 'name',
+			'order'      => 'ASC',
+		)
+	);
+
+	if ( is_wp_error( $children ) || empty( $children ) ) {
+		return array();
+	}
+
+	return $children;
+}
+
+/**
+ * Checks whether a given category (or the current queried category) is the AI category or a child of it.
+ *
+ * @param WP_Term|int|null $category Category term, term ID, or null for current query.
+ * @return bool True if category is AI or a child of AI.
+ */
+function cdt_is_ai_category_or_child( $category = null ) {
+	$ai_cat_id = cdt_get_ai_category_id();
+
+	if ( null === $category ) {
+		if ( ! is_category() ) {
+			return false;
+		}
+		$category = get_queried_object();
+	}
+
+	if ( is_numeric( $category ) ) {
+		$category = get_category( (int) $category );
+	}
+
+	if ( ! $category || is_wp_error( $category ) ) {
+		return false;
+	}
+
+	$term_id = (int) $category->term_id;
+	$slug    = isset( $category->slug ) ? urldecode( $category->slug ) : '';
+
+	// Direct match to AI parent
+	if ( $term_id === $ai_cat_id || 'الذكاء-الاصطناعي' === $slug ) {
+		return true;
+	}
+
+	// Direct parent is AI
+	if ( isset( $category->parent ) && (int) $category->parent === $ai_cat_id ) {
+		return true;
+	}
+
+	// Ancestor check
+	if ( function_exists( 'cat_is_ancestor_of' ) && cat_is_ancestor_of( $ai_cat_id, $category ) ) {
+		return true;
+	}
+
+	return false;
+}
+
+/**
  * Returns the canonical URL for the Artificial Intelligence section
  *
  * @return string
@@ -317,10 +391,11 @@ function cdt_get_ai_section_url() {
  * Determines the category object to visually display to the visitor on post cards and article views.
  *
  * Requirements:
- * - Visually hides "الذكاء الاصطناعي" from the category badge on cards and single articles.
+ * - If the post belongs to a child category of "الذكاء الاصطناعي", that child category is returned to show its badge.
+ * - Visually hides "الذكاء الاصطناعي" from the category badge on cards and single articles if no child category is set.
  * - If the post has multiple categories (e.g. AI + Tech or AI + Learn Programming),
  *   it selects the companion general category so a badge can still be displayed.
- * - If the post ONLY belongs to "الذكاء الاصطناعي", it returns null so no badge displaying
+ * - If the post ONLY belongs to the parent "الذكاء الاصطناعي", it returns null so no badge displaying
  *   the forbidden category name is shown to the visitor.
  * - Preserves the category relationship in the database, REST API, sitemaps, and search engines 100%.
  *
@@ -342,7 +417,15 @@ function cdt_get_display_category( $post_id = null ) {
 
 	$ai_cat_id = cdt_get_ai_category_id();
 
-	// Search for the first category that is NOT AI
+	// 1. If post belongs to any child category of AI, prioritize that child category!
+	foreach ( $categories as $cat ) {
+		$cat_id = (int) $cat->term_id;
+		if ( ( isset( $cat->parent ) && (int) $cat->parent === $ai_cat_id ) || ( function_exists( 'cat_is_ancestor_of' ) && cat_is_ancestor_of( $ai_cat_id, $cat_id ) ) ) {
+			return $cat;
+		}
+	}
+
+	// 2. Search for the first category that is NOT AI
 	foreach ( $categories as $cat ) {
 		$cat_id = (int) $cat->term_id;
 		$slug   = urldecode( $cat->slug );
@@ -351,7 +434,7 @@ function cdt_get_display_category( $post_id = null ) {
 		}
 	}
 
-	// Post only belongs to AI category - hide visual name from visitor
+	// Post only belongs to AI parent category - hide visual name from visitor
 	return null;
 }
 

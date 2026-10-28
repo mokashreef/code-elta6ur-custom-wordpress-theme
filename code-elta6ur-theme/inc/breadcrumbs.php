@@ -129,6 +129,23 @@ function cdt_breadcrumbs() {
 		echo '<meta itemprop="position" content="' . esc_attr( $pos++ ) . '" />';
 		echo '</span>';
 	} elseif ( is_category() ) {
+		$cat = get_queried_object();
+		if ( $cat && ! empty( $cat->parent ) && function_exists( 'get_ancestors' ) ) {
+			$ancestor_ids = get_ancestors( (int) $cat->term_id, 'category' );
+			if ( ! empty( $ancestor_ids ) ) {
+				$ancestor_ids = array_reverse( $ancestor_ids );
+				foreach ( $ancestor_ids as $ancestor_id ) {
+					$ancestor_term = get_category( $ancestor_id );
+					if ( $ancestor_term && ! is_wp_error( $ancestor_term ) ) {
+						echo $delimiter;
+						echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">';
+						echo '<a itemprop="item" href="' . esc_url( get_category_link( $ancestor_term->term_id ) ) . '" class="cdt-breadcrumb-link"><span itemprop="name">' . esc_html( $ancestor_term->name ) . '</span></a>';
+						echo '<meta itemprop="position" content="' . esc_attr( $pos++ ) . '" />';
+						echo '</span>';
+					}
+				}
+			}
+		}
 		echo $delimiter;
 		echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">';
 		echo '<span itemprop="name" class="cdt-breadcrumb-current" aria-current="page">' . esc_html( single_cat_title( '', false ) ) . '</span>';

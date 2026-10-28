@@ -1,7 +1,7 @@
 <?php
 /**
- * قالب مخصص لقسم الذكاء الاصطناعي (AI Category Archive - Term ID 9)
- * Code Elta6ur AI Hub & Articles Archive
+ * قالب مخصص لقسم وتصنيفات الذكاء الاصطناعي (AI Category Archive & Dynamic Subcategories)
+ * Code Elta6ur AI Hub & Subcategories Archive
  *
  * @package CodeElta6ur
  */
@@ -11,34 +11,71 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header();
+
+$current_term  = get_queried_object();
+$ai_cat_id     = function_exists( 'cdt_get_ai_category_id' ) ? cdt_get_ai_category_id() : 9;
+$is_parent_ai  = ( $current_term && ( (int) $current_term->term_id === (int) $ai_cat_id || 'الذكاء-الاصطناعي' === urldecode( $current_term->slug ?? '' ) ) );
+$subcategories = function_exists( 'cdt_get_ai_child_categories' ) ? cdt_get_ai_child_categories( false ) : array();
+
+// Determine titles and descriptions dynamically based on whether viewing parent or child
+if ( $is_parent_ai || ! $current_term || empty( $current_term->term_id ) ) {
+	$badge_text = esc_html__( 'عالم الذكاء الاصطناعي والتقنيات التوليدية', 'code-elta6ur' );
+	$hero_title = esc_html__( 'قسم الذكاء الاصطناعي: أدوات، شروحات، وهندسة الأوامر', 'code-elta6ur' );
+	$hero_desc  = esc_html__( 'دليلك المتكامل لاستثمار ثورة الذكاء الاصطناعي في البرمجة، مقارنة النماذج التوليدية الكبرى (ChatGPT, Claude, DeepSeek)، وهندسة الأوامر Prompts لبناء تطبيقات ذكية.', 'code-elta6ur' );
+	$sec_title  = esc_html__( 'أحدث مقالات الذكاء الاصطناعي في المنصة', 'code-elta6ur' );
+	$sec_desc   = esc_html__( 'جميع المقالات والشروحات والتحليلات المتخصصة في الذكاء الاصطناعي مرتبة لتسهيل القراءة والتطبيق.', 'code-elta6ur' );
+} else {
+	$badge_text = sprintf( esc_html__( 'قسم الذكاء الاصطناعي · %s', 'code-elta6ur' ), $current_term->name );
+	$hero_title = single_cat_title( '', false );
+	$term_desc  = category_description();
+	$hero_desc  = ! empty( $term_desc ) ? wp_strip_all_tags( $term_desc ) : sprintf( esc_html__( 'دليلك وشروحاتك المتخصصة في %s ضمن قسم الذكاء الاصطناعي في كود التطور.', 'code-elta6ur' ), $current_term->name );
+	$sec_title  = sprintf( esc_html__( 'مقالات وتطبيقات: %s', 'code-elta6ur' ), $current_term->name );
+	$sec_desc   = sprintf( esc_html__( 'تصفح أحدث الشروحات والمقالات المنشورة في تصنيف %s والمحدثة لمواكبة أحدث تقنيات الذكاء الاصطناعي.', 'code-elta6ur' ), $current_term->name );
+}
 ?>
 
 <!-- AI Hub Hero Section -->
-<div class="cdt-page-hero" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(1, 112, 185, 0.9) 100%);">
+<div class="cdt-page-hero cdt-ai-hero" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(1, 112, 185, 0.9) 100%);">
 	<div class="cdt-container">
 		<div class="cdt-hero-badge" style="margin-block-end: var(--space-3, 0.75rem);">
-			<span class="cdt-badge cdt-badge-accent">🤖 <?php esc_html_e( 'عالم الذكاء الاصطناعي والتقنيات التوليدية', 'code-elta6ur' ); ?></span>
+			<span class="cdt-badge cdt-badge-accent">🤖 <?php echo esc_html( $badge_text ); ?></span>
 			<span class="cdt-badge cdt-badge-dark" style="margin-inline-start: var(--space-2, 0.5rem);"><?php esc_html_e( 'محتوى متجدد 2026', 'code-elta6ur' ); ?></span>
 		</div>
 		<h1 class="cdt-page-hero-title">
-			<?php esc_html_e( 'قسم الذكاء الاصطناعي: أدوات، شروحات، وهندسة الأوامر', 'code-elta6ur' ); ?>
+			<?php echo esc_html( $hero_title ); ?>
 		</h1>
 		<p class="cdt-page-hero-desc">
-			<?php esc_html_e( 'دليلك المتكامل لاستثمار ثورة الذكاء الاصطناعي في البرمجة، مقارنة النماذج التوليدية الكبرى (ChatGPT, Claude, DeepSeek)، وهندسة الأوامر Prompts لبناء تطبيقات ذكية.', 'code-elta6ur' ); ?>
+			<?php echo esc_html( $hero_desc ); ?>
 		</p>
 
-		<!-- AI Hub Feature Pills -->
-		<div style="display: flex; gap: var(--space-3, 0.75rem); justify-content: center; flex-wrap: wrap; margin-block-start: var(--space-6, 1.5rem);">
-			<div style="background: rgba(255,255,255,0.12); padding: 8px 18px; border-radius: var(--radius-full, 9999px); font-size: 0.9rem; font-weight: 600; color: #FFFFFF;">
-				🧠 <?php esc_html_e( 'هندسة الأوامر (Prompt Engineering)', 'code-elta6ur' ); ?>
+		<!-- Dynamic AI Subcategories Filter Tabs -->
+		<nav class="cdt-ai-subnav" aria-label="<?php esc_attr_e( 'تصنيفات الذكاء الاصطناعي', 'code-elta6ur' ); ?>">
+			<div class="cdt-ai-subnav-list">
+				<!-- All AI Posts Tab -->
+				<a href="<?php echo esc_url( cdt_get_ai_section_url() ); ?>" class="cdt-ai-pill <?php echo $is_parent_ai ? 'is-active' : ''; ?>">
+					<span><?php esc_html_e( 'كل المقالات', 'code-elta6ur' ); ?></span>
+				</a>
+
+				<?php if ( ! empty( $subcategories ) ) : ?>
+					<?php foreach ( $subcategories as $subcat ) : ?>
+						<?php
+						$is_sub_active = ( $current_term && (int) $current_term->term_id === (int) $subcat->term_id );
+						?>
+						<a href="<?php echo esc_url( get_category_link( $subcat->term_id ) ); ?>" class="cdt-ai-pill <?php echo $is_sub_active ? 'is-active' : ''; ?>">
+							<span><?php echo esc_html( $subcat->name ); ?></span>
+							<?php if ( ! empty( $subcat->count ) ) : ?>
+								<span class="cdt-ai-pill-count"><?php echo esc_html( number_format_i18n( $subcat->count ) ); ?></span>
+							<?php endif; ?>
+						</a>
+					<?php endforeach; ?>
+				<?php else : ?>
+					<!-- Fallback feature highlights when no child categories are added yet -->
+					<div class="cdt-ai-pill is-static">🧠 <?php esc_html_e( 'هندسة الأوامر (Prompt Engineering)', 'code-elta6ur' ); ?></div>
+					<div class="cdt-ai-pill is-static">⚖️ <?php esc_html_e( 'مقارنات النماذج والأدوات الحية', 'code-elta6ur' ); ?></div>
+					<div class="cdt-ai-pill is-static">🚀 <?php esc_html_e( 'تطبيقات المطورين وسوق العمل', 'code-elta6ur' ); ?></div>
+				<?php endif; ?>
 			</div>
-			<div style="background: rgba(255,255,255,0.12); padding: 8px 18px; border-radius: var(--radius-full, 9999px); font-size: 0.9rem; font-weight: 600; color: #FFFFFF;">
-				⚖️ <?php esc_html_e( 'مقارنات النماذج والأدوات الحية', 'code-elta6ur' ); ?>
-			</div>
-			<div style="background: rgba(255,255,255,0.12); padding: 8px 18px; border-radius: var(--radius-full, 9999px); font-size: 0.9rem; font-weight: 600; color: #FFFFFF;">
-				🚀 <?php esc_html_e( 'تطبيقات المطورين وسوق العمل', 'code-elta6ur' ); ?>
-			</div>
-		</div>
+		</nav>
 	</div>
 </div>
 
@@ -52,10 +89,10 @@ get_header();
 				<span class="cdt-badge"><?php esc_html_e( 'مقالات وشروحات القسم', 'code-elta6ur' ); ?></span>
 			</div>
 			<h2 class="cdt-section-title" style="font-size: var(--font-size-2xl, 1.5rem);">
-				<?php esc_html_e( 'أحدث مقالات الذكاء الاصطناعي في المنصة', 'code-elta6ur' ); ?>
+				<?php echo esc_html( $sec_title ); ?>
 			</h2>
 			<p class="cdt-section-desc" style="margin-inline: 0;">
-				<?php esc_html_e( 'جميع المقالات والشروحات والتحليلات المتخصصة في الذكاء الاصطناعي مرتبة لتسهيل القراءة والتطبيق.', 'code-elta6ur' ); ?>
+				<?php echo esc_html( $sec_desc ); ?>
 			</p>
 		</div>
 

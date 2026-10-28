@@ -156,13 +156,19 @@ function cdt_template_redirect_loader( $template ) {
 		}
 	}
 
-	// 6. AI Category Archive (/category/الذكاء-الاصطناعي/ or ID 9)
+	// 6. AI Category Archive & Child Categories (/category/الذكاء-الاصطناعي/ or ID 9 or any Child of AI)
 	if ( is_category() ) {
 		$cat = get_queried_object();
-		if ( $cat && ( 9 === (int) $cat->term_id || 'الذكاء-الاصطناعي' === urldecode( $cat->slug ) ) ) {
-			$found = locate_template( array( 'category-9.php', 'template-ai.php' ) );
-			if ( $found ) {
-				return $found;
+		if ( $cat ) {
+			$is_ai = ( 9 === (int) $cat->term_id || 'الذكاء-الاصطناعي' === urldecode( $cat->slug ) );
+			if ( ! $is_ai && function_exists( 'cdt_is_ai_category_or_child' ) ) {
+				$is_ai = cdt_is_ai_category_or_child( $cat );
+			}
+			if ( $is_ai ) {
+				$found = locate_template( array( 'category-9.php', 'template-ai.php' ) );
+				if ( $found ) {
+					return $found;
+				}
 			}
 		}
 	}
